@@ -30,4 +30,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: code4demo/nebula-http-gateway:latest
+        tags: code4demo/nebula-http-gateway-cros:latest
