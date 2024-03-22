@@ -213,8 +213,6 @@ func ListParams(args string, tmpParameter types.ParameterMap, sessionMap types.P
 
 func NewClient(address string, port int, username string, password string, opts ...nebula.Option) (*ClientInfo, error) {
 	var err error
-	clientMux.Lock()
-	defer clientMux.Unlock()
 
 	// TODO: it's better to add a schedule to make it instead
 	if currentClientNum > clientRecycleNum {
@@ -253,8 +251,11 @@ func NewClient(address string, port int, username string, password string, opts 
 		},
 		timezone: c.GetTimezoneInfo(),
 	}
+
+	clientMux.Lock()
 	clientPool[nsid] = client
 	currentClientNum++
+	clientMux.Unlock()
 
 	// Make a goroutine to deal with concurrent requests from each connection
 	go handleRequest(nsid)
@@ -273,6 +274,7 @@ func ClearClients() {
 }
 
 func recycleClients() {
+	clientMux.Lock()
 	for _, client := range clientPool {
 		now := time.Now().Unix()
 		expireAt := client.updateTime + SessionExpiredDuration
@@ -280,6 +282,7 @@ func recycleClients() {
 			client.CloseChannel <- true
 		}
 	}
+	clientMux.Unlock()
 }
 
 func handleRequest(nsid string) {

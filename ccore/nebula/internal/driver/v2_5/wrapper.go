@@ -1148,6 +1148,10 @@ func (w spaceWrapper) GetName() string {
 	return string(w.Space.GetName())
 }
 
+func (w spaceWrapper) GetId() int32 {
+	return w.Space.GetId().GetSpaceID()
+}
+
 type spacesWrap struct {
 	metaBaserWrap
 	Spaces []types.Space
