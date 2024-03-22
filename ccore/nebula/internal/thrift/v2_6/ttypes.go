@@ -781,8 +781,8 @@ type ExecutionPlanID = int64
 func ExecutionPlanIDPtr(v ExecutionPlanID) *ExecutionPlanID { return &v }
 
 // Attributes:
-//  - TagID
-//  - EdgeType
+//   - TagID
+//   - EdgeType
 type SchemaID struct {
 	TagID    *TagID    `thrift:"tag_id,1" db:"tag_id" json:"tag_id,omitempty"`
 	EdgeType *EdgeType `thrift:"edge_type,2" db:"edge_type" json:"edge_type,omitempty"`
@@ -959,9 +959,9 @@ func (p *SchemaID) String() string {
 }
 
 // Attributes:
-//  - Year
-//  - Month
-//  - Day
+//   - Year
+//   - Month
+//   - Day
 type Date struct {
 	Year  int16 `thrift:"year,1" db:"year" json:"year"`
 	Month int8  `thrift:"month,2" db:"month" json:"month"`
@@ -1126,10 +1126,10 @@ func (p *Date) String() string {
 }
 
 // Attributes:
-//  - Hour
-//  - Minute
-//  - Sec
-//  - Microsec
+//   - Hour
+//   - Minute
+//   - Sec
+//   - Microsec
 type Time struct {
 	Hour     int8  `thrift:"hour,1" db:"hour" json:"hour"`
 	Minute   int8  `thrift:"minute,2" db:"minute" json:"minute"`
@@ -1330,13 +1330,13 @@ func (p *Time) String() string {
 }
 
 // Attributes:
-//  - Year
-//  - Month
-//  - Day
-//  - Hour
-//  - Minute
-//  - Sec
-//  - Microsec
+//   - Year
+//   - Month
+//   - Day
+//   - Hour
+//   - Minute
+//   - Sec
+//   - Microsec
 type DateTime struct {
 	Year     int16 `thrift:"year,1" db:"year" json:"year"`
 	Month    int8  `thrift:"month,2" db:"month" json:"month"`
@@ -1644,22 +1644,22 @@ func (p *DateTime) String() string {
 }
 
 // Attributes:
-//  - NVal
-//  - BVal
-//  - IVal
-//  - FVal
-//  - SVal
-//  - DVal
-//  - TVal
-//  - DtVal
-//  - VVal
-//  - EVal
-//  - PVal
-//  - LVal
-//  - MVal
-//  - UVal
-//  - GVal
-//  - GgVal
+//   - NVal
+//   - BVal
+//   - IVal
+//   - FVal
+//   - SVal
+//   - DVal
+//   - TVal
+//   - DtVal
+//   - VVal
+//   - EVal
+//   - PVal
+//   - LVal
+//   - MVal
+//   - UVal
+//   - GVal
+//   - GgVal
 type Value struct {
 	NVal  *NullType  `thrift:"nVal,1" db:"nVal" json:"nVal,omitempty"`
 	BVal  *bool      `thrift:"bVal,2" db:"bVal" json:"bVal,omitempty"`
@@ -2572,7 +2572,7 @@ func (p *Value) String() string {
 }
 
 // Attributes:
-//  - Values
+//   - Values
 type NList struct {
 	Values []*Value `thrift:"values,1" db:"values" json:"values"`
 }
@@ -2684,7 +2684,7 @@ func (p *NList) String() string {
 }
 
 // Attributes:
-//  - Kvs
+//   - Kvs
 type NMap struct {
 	Kvs map[string]*Value `thrift:"kvs,1" db:"kvs" json:"kvs"`
 }
@@ -2805,7 +2805,7 @@ func (p *NMap) String() string {
 }
 
 // Attributes:
-//  - Values
+//   - Values
 type NSet struct {
 	Values []*Value `thrift:"values,1" db:"values" json:"values"`
 }
@@ -2924,7 +2924,7 @@ func (p *NSet) String() string {
 }
 
 // Attributes:
-//  - Values
+//   - Values
 type Row struct {
 	Values []*Value `thrift:"values,1" db:"values" json:"values"`
 }
@@ -3036,8 +3036,8 @@ func (p *Row) String() string {
 }
 
 // Attributes:
-//  - ColumnNames
-//  - Rows
+//   - ColumnNames
+//   - Rows
 type DataSet struct {
 	ColumnNames [][]byte `thrift:"column_names,1" db:"column_names" json:"column_names"`
 	Rows        []*Row   `thrift:"rows,2" db:"rows" json:"rows"`
@@ -3205,8 +3205,8 @@ func (p *DataSet) String() string {
 }
 
 // Attributes:
-//  - X
-//  - Y
+//   - X
+//   - Y
 type Coordinate struct {
 	X float64 `thrift:"x,1" db:"x" json:"x"`
 	Y float64 `thrift:"y,2" db:"y" json:"y"`
@@ -3334,7 +3334,7 @@ func (p *Coordinate) String() string {
 }
 
 // Attributes:
-//  - Coord
+//   - Coord
 type Point struct {
 	Coord *Coordinate `thrift:"coord,1" db:"coord" json:"coord"`
 }
@@ -3442,7 +3442,7 @@ func (p *Point) String() string {
 }
 
 // Attributes:
-//  - CoordList
+//   - CoordList
 type LineString struct {
 	CoordList []*Coordinate `thrift:"coordList,1" db:"coordList" json:"coordList"`
 }
@@ -3554,7 +3554,7 @@ func (p *LineString) String() string {
 }
 
 // Attributes:
-//  - CoordListList
+//   - CoordListList
 type Polygon struct {
 	CoordListList [][]*Coordinate `thrift:"coordListList,1" db:"coordListList" json:"coordListList"`
 }
@@ -3686,9 +3686,9 @@ func (p *Polygon) String() string {
 }
 
 // Attributes:
-//  - PtVal
-//  - LsVal
-//  - PgVal
+//   - PtVal
+//   - LsVal
+//   - PgVal
 type Geography struct {
 	PtVal *Point      `thrift:"ptVal,1" db:"ptVal" json:"ptVal,omitempty"`
 	LsVal *LineString `thrift:"lsVal,2" db:"lsVal" json:"lsVal,omitempty"`
@@ -3914,8 +3914,8 @@ func (p *Geography) String() string {
 }
 
 // Attributes:
-//  - Name
-//  - Props
+//   - Name
+//   - Props
 type Tag struct {
 	Name  []byte            `thrift:"name,1" db:"name" json:"name"`
 	Props map[string]*Value `thrift:"props,2" db:"props" json:"props"`
@@ -4071,8 +4071,8 @@ func (p *Tag) String() string {
 }
 
 // Attributes:
-//  - Vid
-//  - Tags
+//   - Vid
+//   - Tags
 type Vertex struct {
 	Vid  *Value `thrift:"vid,1" db:"vid" json:"vid"`
 	Tags []*Tag `thrift:"tags,2" db:"tags" json:"tags"`
@@ -4232,12 +4232,12 @@ func (p *Vertex) String() string {
 }
 
 // Attributes:
-//  - Src
-//  - Dst
-//  - Type
-//  - Name
-//  - Ranking
-//  - Props
+//   - Src
+//   - Dst
+//   - Type
+//   - Name
+//   - Ranking
+//   - Props
 type Edge struct {
 	Src     *Value            `thrift:"src,1" db:"src" json:"src"`
 	Dst     *Value            `thrift:"dst,2" db:"dst" json:"dst"`
@@ -4561,11 +4561,11 @@ func (p *Edge) String() string {
 }
 
 // Attributes:
-//  - Dst
-//  - Type
-//  - Name
-//  - Ranking
-//  - Props
+//   - Dst
+//   - Type
+//   - Name
+//   - Ranking
+//   - Props
 type Step struct {
 	Dst     *Vertex           `thrift:"dst,1" db:"dst" json:"dst"`
 	Type    EdgeType          `thrift:"type,2" db:"type" json:"type"`
@@ -4843,8 +4843,8 @@ func (p *Step) String() string {
 }
 
 // Attributes:
-//  - Src
-//  - Steps
+//   - Src
+//   - Steps
 type Path struct {
 	Src   *Vertex `thrift:"src,1" db:"src" json:"src"`
 	Steps []*Step `thrift:"steps,2" db:"steps" json:"steps"`
@@ -5006,8 +5006,8 @@ func (p *Path) String() string {
 }
 
 // Attributes:
-//  - Host
-//  - Port
+//   - Host
+//   - Port
 type HostAddr struct {
 	Host string `thrift:"host,1" db:"host" json:"host"`
 	Port Port   `thrift:"port,2" db:"port" json:"port"`
@@ -5136,8 +5136,8 @@ func (p *HostAddr) String() string {
 }
 
 // Attributes:
-//  - Key
-//  - Value
+//   - Key
+//   - Value
 type KeyValue struct {
 	Key   []byte `thrift:"key,1" db:"key" json:"key"`
 	Value []byte `thrift:"value,2" db:"value" json:"value"`
@@ -5265,8 +5265,8 @@ func (p *KeyValue) String() string {
 }
 
 // Attributes:
-//  - LogID
-//  - TermID
+//   - LogID
+//   - TermID
 type LogInfo struct {
 	LogID  LogID  `thrift:"log_id,1" db:"log_id" json:"log_id"`
 	TermID TermID `thrift:"term_id,2" db:"term_id" json:"term_id"`
@@ -5396,8 +5396,8 @@ func (p *LogInfo) String() string {
 }
 
 // Attributes:
-//  - Root
-//  - Data
+//   - Root
+//   - Data
 type DirInfo struct {
 	Root []byte   `thrift:"root,1" db:"root" json:"root"`
 	Data [][]byte `thrift:"data,2" db:"data" json:"data"`
@@ -5546,8 +5546,8 @@ func (p *DirInfo) String() string {
 }
 
 // Attributes:
-//  - Host
-//  - Dir
+//   - Host
+//   - Dir
 type NodeInfo struct {
 	Host *HostAddr `thrift:"host,1" db:"host" json:"host"`
 	Dir  *DirInfo  `thrift:"dir,2" db:"dir" json:"dir"`
@@ -5704,7 +5704,7 @@ func (p *NodeInfo) String() string {
 }
 
 // Attributes:
-//  - Info
+//   - Info
 type PartitionBackupInfo struct {
 	Info map[PartitionID]*LogInfo `thrift:"info,1" db:"info" json:"info"`
 }
@@ -5826,8 +5826,8 @@ func (p *PartitionBackupInfo) String() string {
 }
 
 // Attributes:
-//  - PartitionInfo
-//  - Path
+//   - PartitionInfo
+//   - Path
 type CheckpointInfo struct {
 	PartitionInfo *PartitionBackupInfo `thrift:"partition_info,1" db:"partition_info" json:"partition_info"`
 	Path          []byte               `thrift:"path,2" db:"path" json:"path"`

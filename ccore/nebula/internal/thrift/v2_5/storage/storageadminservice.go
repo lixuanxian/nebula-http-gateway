@@ -157,7 +157,7 @@ func NewStorageAdminServiceClientProtocol(prot thrift.Protocol) *StorageAdminSer
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) TransLeader(req *TransLeaderReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceTransLeaderArgs{
 		Req: req,
@@ -180,7 +180,7 @@ func (p *StorageAdminServiceClient) recvTransLeader() (value *AdminExecResp, err
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) AddPart(req *AddPartReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceAddPartArgs{
 		Req: req,
@@ -203,7 +203,7 @@ func (p *StorageAdminServiceClient) recvAddPart() (value *AdminExecResp, err err
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) AddLearner(req *AddLearnerReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceAddLearnerArgs{
 		Req: req,
@@ -226,7 +226,7 @@ func (p *StorageAdminServiceClient) recvAddLearner() (value *AdminExecResp, err 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) RemovePart(req *RemovePartReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceRemovePartArgs{
 		Req: req,
@@ -249,7 +249,7 @@ func (p *StorageAdminServiceClient) recvRemovePart() (value *AdminExecResp, err 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) MemberChange(req *MemberChangeReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceMemberChangeArgs{
 		Req: req,
@@ -272,7 +272,7 @@ func (p *StorageAdminServiceClient) recvMemberChange() (value *AdminExecResp, er
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) WaitingForCatchUpData(req *CatchUpDataReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceWaitingForCatchUpDataArgs{
 		Req: req,
@@ -295,7 +295,7 @@ func (p *StorageAdminServiceClient) recvWaitingForCatchUpData() (value *AdminExe
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) CreateCheckpoint(req *CreateCPRequest) (_r *CreateCPResp, err error) {
 	args := StorageAdminServiceCreateCheckpointArgs{
 		Req: req,
@@ -318,7 +318,7 @@ func (p *StorageAdminServiceClient) recvCreateCheckpoint() (value *CreateCPResp,
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) DropCheckpoint(req *DropCPRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceDropCheckpointArgs{
 		Req: req,
@@ -341,7 +341,7 @@ func (p *StorageAdminServiceClient) recvDropCheckpoint() (value *AdminExecResp, 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) BlockingWrites(req *BlockingSignRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceBlockingWritesArgs{
 		Req: req,
@@ -364,7 +364,7 @@ func (p *StorageAdminServiceClient) recvBlockingWrites() (value *AdminExecResp, 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) RebuildTagIndex(req *RebuildIndexRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceRebuildTagIndexArgs{
 		Req: req,
@@ -387,7 +387,7 @@ func (p *StorageAdminServiceClient) recvRebuildTagIndex() (value *AdminExecResp,
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) RebuildEdgeIndex(req *RebuildIndexRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceRebuildEdgeIndexArgs{
 		Req: req,
@@ -410,7 +410,7 @@ func (p *StorageAdminServiceClient) recvRebuildEdgeIndex() (value *AdminExecResp
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) GetLeaderParts(req *GetLeaderReq) (_r *GetLeaderPartsResp, err error) {
 	args := StorageAdminServiceGetLeaderPartsArgs{
 		Req: req,
@@ -433,7 +433,7 @@ func (p *StorageAdminServiceClient) recvGetLeaderParts() (value *GetLeaderPartsR
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) CheckPeers(req *CheckPeersReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceCheckPeersArgs{
 		Req: req,
@@ -456,7 +456,7 @@ func (p *StorageAdminServiceClient) recvCheckPeers() (value *AdminExecResp, err 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) AddAdminTask(req *AddAdminTaskRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceAddAdminTaskArgs{
 		Req: req,
@@ -479,7 +479,7 @@ func (p *StorageAdminServiceClient) recvAddAdminTask() (value *AdminExecResp, er
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) StopAdminTask(req *StopAdminTaskRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceStopAdminTaskArgs{
 		Req: req,
@@ -502,7 +502,7 @@ func (p *StorageAdminServiceClient) recvStopAdminTask() (value *AdminExecResp, e
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceClient) ListClusterInfo(req *ListClusterInfoReq) (_r *ListClusterInfoResp, err error) {
 	args := StorageAdminServiceListClusterInfoArgs{
 		Req: req,
@@ -561,7 +561,7 @@ func NewStorageAdminServiceThreadsafeClientProtocol(prot thrift.Protocol) *Stora
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) TransLeader(req *TransLeaderReq) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -586,7 +586,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvTransLeader() (value *AdminExe
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) AddPart(req *AddPartReq) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -611,7 +611,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvAddPart() (value *AdminExecRes
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) AddLearner(req *AddLearnerReq) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -636,7 +636,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvAddLearner() (value *AdminExec
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) RemovePart(req *RemovePartReq) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -661,7 +661,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvRemovePart() (value *AdminExec
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) MemberChange(req *MemberChangeReq) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -686,7 +686,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvMemberChange() (value *AdminEx
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) WaitingForCatchUpData(req *CatchUpDataReq) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -711,7 +711,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvWaitingForCatchUpData() (value
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) CreateCheckpoint(req *CreateCPRequest) (_r *CreateCPResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -736,7 +736,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvCreateCheckpoint() (value *Cre
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) DropCheckpoint(req *DropCPRequest) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -761,7 +761,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvDropCheckpoint() (value *Admin
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) BlockingWrites(req *BlockingSignRequest) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -786,7 +786,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvBlockingWrites() (value *Admin
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) RebuildTagIndex(req *RebuildIndexRequest) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -811,7 +811,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvRebuildTagIndex() (value *Admi
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) RebuildEdgeIndex(req *RebuildIndexRequest) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -836,7 +836,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvRebuildEdgeIndex() (value *Adm
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) GetLeaderParts(req *GetLeaderReq) (_r *GetLeaderPartsResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -861,7 +861,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvGetLeaderParts() (value *GetLe
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) CheckPeers(req *CheckPeersReq) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -886,7 +886,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvCheckPeers() (value *AdminExec
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) AddAdminTask(req *AddAdminTaskRequest) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -911,7 +911,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvAddAdminTask() (value *AdminEx
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) StopAdminTask(req *StopAdminTaskRequest) (_r *AdminExecResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -936,7 +936,7 @@ func (p *StorageAdminServiceThreadsafeClient) recvStopAdminTask() (value *AdminE
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceThreadsafeClient) ListClusterInfo(req *ListClusterInfoReq) (_r *ListClusterInfoResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -981,7 +981,7 @@ func NewStorageAdminServiceChannelClient(channel thrift.RequestChannel) *Storage
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) TransLeader(ctx context.Context, req *TransLeaderReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceTransLeaderArgs{
 		Req: req,
@@ -996,7 +996,7 @@ func (p *StorageAdminServiceChannelClient) TransLeader(ctx context.Context, req 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) AddPart(ctx context.Context, req *AddPartReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceAddPartArgs{
 		Req: req,
@@ -1011,7 +1011,7 @@ func (p *StorageAdminServiceChannelClient) AddPart(ctx context.Context, req *Add
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) AddLearner(ctx context.Context, req *AddLearnerReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceAddLearnerArgs{
 		Req: req,
@@ -1026,7 +1026,7 @@ func (p *StorageAdminServiceChannelClient) AddLearner(ctx context.Context, req *
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) RemovePart(ctx context.Context, req *RemovePartReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceRemovePartArgs{
 		Req: req,
@@ -1041,7 +1041,7 @@ func (p *StorageAdminServiceChannelClient) RemovePart(ctx context.Context, req *
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) MemberChange(ctx context.Context, req *MemberChangeReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceMemberChangeArgs{
 		Req: req,
@@ -1056,7 +1056,7 @@ func (p *StorageAdminServiceChannelClient) MemberChange(ctx context.Context, req
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) WaitingForCatchUpData(ctx context.Context, req *CatchUpDataReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceWaitingForCatchUpDataArgs{
 		Req: req,
@@ -1071,7 +1071,7 @@ func (p *StorageAdminServiceChannelClient) WaitingForCatchUpData(ctx context.Con
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) CreateCheckpoint(ctx context.Context, req *CreateCPRequest) (_r *CreateCPResp, err error) {
 	args := StorageAdminServiceCreateCheckpointArgs{
 		Req: req,
@@ -1086,7 +1086,7 @@ func (p *StorageAdminServiceChannelClient) CreateCheckpoint(ctx context.Context,
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) DropCheckpoint(ctx context.Context, req *DropCPRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceDropCheckpointArgs{
 		Req: req,
@@ -1101,7 +1101,7 @@ func (p *StorageAdminServiceChannelClient) DropCheckpoint(ctx context.Context, r
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) BlockingWrites(ctx context.Context, req *BlockingSignRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceBlockingWritesArgs{
 		Req: req,
@@ -1116,7 +1116,7 @@ func (p *StorageAdminServiceChannelClient) BlockingWrites(ctx context.Context, r
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) RebuildTagIndex(ctx context.Context, req *RebuildIndexRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceRebuildTagIndexArgs{
 		Req: req,
@@ -1131,7 +1131,7 @@ func (p *StorageAdminServiceChannelClient) RebuildTagIndex(ctx context.Context, 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) RebuildEdgeIndex(ctx context.Context, req *RebuildIndexRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceRebuildEdgeIndexArgs{
 		Req: req,
@@ -1146,7 +1146,7 @@ func (p *StorageAdminServiceChannelClient) RebuildEdgeIndex(ctx context.Context,
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) GetLeaderParts(ctx context.Context, req *GetLeaderReq) (_r *GetLeaderPartsResp, err error) {
 	args := StorageAdminServiceGetLeaderPartsArgs{
 		Req: req,
@@ -1161,7 +1161,7 @@ func (p *StorageAdminServiceChannelClient) GetLeaderParts(ctx context.Context, r
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) CheckPeers(ctx context.Context, req *CheckPeersReq) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceCheckPeersArgs{
 		Req: req,
@@ -1176,7 +1176,7 @@ func (p *StorageAdminServiceChannelClient) CheckPeers(ctx context.Context, req *
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) AddAdminTask(ctx context.Context, req *AddAdminTaskRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceAddAdminTaskArgs{
 		Req: req,
@@ -1191,7 +1191,7 @@ func (p *StorageAdminServiceChannelClient) AddAdminTask(ctx context.Context, req
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) StopAdminTask(ctx context.Context, req *StopAdminTaskRequest) (_r *AdminExecResp, err error) {
 	args := StorageAdminServiceStopAdminTaskArgs{
 		Req: req,
@@ -1206,7 +1206,7 @@ func (p *StorageAdminServiceChannelClient) StopAdminTask(ctx context.Context, re
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *StorageAdminServiceChannelClient) ListClusterInfo(ctx context.Context, req *ListClusterInfoReq) (_r *ListClusterInfoResp, err error) {
 	args := StorageAdminServiceListClusterInfoArgs{
 		Req: req,
@@ -2064,7 +2064,7 @@ func (p *storageAdminServiceProcessorListClusterInfo) RunContext(ctx context.Con
 // HELPER FUNCTIONS AND STRUCTURES
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceTransLeaderArgs struct {
 	thrift.IRequest
 	Req *TransLeaderReq `thrift:"req,1" db:"req" json:"req"`
@@ -2173,7 +2173,7 @@ func (p *StorageAdminServiceTransLeaderArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceTransLeaderResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -2282,7 +2282,7 @@ func (p *StorageAdminServiceTransLeaderResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceAddPartArgs struct {
 	thrift.IRequest
 	Req *AddPartReq `thrift:"req,1" db:"req" json:"req"`
@@ -2391,7 +2391,7 @@ func (p *StorageAdminServiceAddPartArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceAddPartResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -2500,7 +2500,7 @@ func (p *StorageAdminServiceAddPartResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceAddLearnerArgs struct {
 	thrift.IRequest
 	Req *AddLearnerReq `thrift:"req,1" db:"req" json:"req"`
@@ -2609,7 +2609,7 @@ func (p *StorageAdminServiceAddLearnerArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceAddLearnerResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -2718,7 +2718,7 @@ func (p *StorageAdminServiceAddLearnerResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceRemovePartArgs struct {
 	thrift.IRequest
 	Req *RemovePartReq `thrift:"req,1" db:"req" json:"req"`
@@ -2827,7 +2827,7 @@ func (p *StorageAdminServiceRemovePartArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceRemovePartResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -2936,7 +2936,7 @@ func (p *StorageAdminServiceRemovePartResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceMemberChangeArgs struct {
 	thrift.IRequest
 	Req *MemberChangeReq `thrift:"req,1" db:"req" json:"req"`
@@ -3045,7 +3045,7 @@ func (p *StorageAdminServiceMemberChangeArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceMemberChangeResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -3154,7 +3154,7 @@ func (p *StorageAdminServiceMemberChangeResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceWaitingForCatchUpDataArgs struct {
 	thrift.IRequest
 	Req *CatchUpDataReq `thrift:"req,1" db:"req" json:"req"`
@@ -3263,7 +3263,7 @@ func (p *StorageAdminServiceWaitingForCatchUpDataArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceWaitingForCatchUpDataResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -3372,7 +3372,7 @@ func (p *StorageAdminServiceWaitingForCatchUpDataResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceCreateCheckpointArgs struct {
 	thrift.IRequest
 	Req *CreateCPRequest `thrift:"req,1" db:"req" json:"req"`
@@ -3481,7 +3481,7 @@ func (p *StorageAdminServiceCreateCheckpointArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceCreateCheckpointResult struct {
 	thrift.IResponse
 	Success *CreateCPResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -3590,7 +3590,7 @@ func (p *StorageAdminServiceCreateCheckpointResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceDropCheckpointArgs struct {
 	thrift.IRequest
 	Req *DropCPRequest `thrift:"req,1" db:"req" json:"req"`
@@ -3699,7 +3699,7 @@ func (p *StorageAdminServiceDropCheckpointArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceDropCheckpointResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -3808,7 +3808,7 @@ func (p *StorageAdminServiceDropCheckpointResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceBlockingWritesArgs struct {
 	thrift.IRequest
 	Req *BlockingSignRequest `thrift:"req,1" db:"req" json:"req"`
@@ -3917,7 +3917,7 @@ func (p *StorageAdminServiceBlockingWritesArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceBlockingWritesResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -4026,7 +4026,7 @@ func (p *StorageAdminServiceBlockingWritesResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceRebuildTagIndexArgs struct {
 	thrift.IRequest
 	Req *RebuildIndexRequest `thrift:"req,1" db:"req" json:"req"`
@@ -4135,7 +4135,7 @@ func (p *StorageAdminServiceRebuildTagIndexArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceRebuildTagIndexResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -4244,7 +4244,7 @@ func (p *StorageAdminServiceRebuildTagIndexResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceRebuildEdgeIndexArgs struct {
 	thrift.IRequest
 	Req *RebuildIndexRequest `thrift:"req,1" db:"req" json:"req"`
@@ -4353,7 +4353,7 @@ func (p *StorageAdminServiceRebuildEdgeIndexArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceRebuildEdgeIndexResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -4462,7 +4462,7 @@ func (p *StorageAdminServiceRebuildEdgeIndexResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceGetLeaderPartsArgs struct {
 	thrift.IRequest
 	Req *GetLeaderReq `thrift:"req,1" db:"req" json:"req"`
@@ -4571,7 +4571,7 @@ func (p *StorageAdminServiceGetLeaderPartsArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceGetLeaderPartsResult struct {
 	thrift.IResponse
 	Success *GetLeaderPartsResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -4680,7 +4680,7 @@ func (p *StorageAdminServiceGetLeaderPartsResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceCheckPeersArgs struct {
 	thrift.IRequest
 	Req *CheckPeersReq `thrift:"req,1" db:"req" json:"req"`
@@ -4789,7 +4789,7 @@ func (p *StorageAdminServiceCheckPeersArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceCheckPeersResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -4898,7 +4898,7 @@ func (p *StorageAdminServiceCheckPeersResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceAddAdminTaskArgs struct {
 	thrift.IRequest
 	Req *AddAdminTaskRequest `thrift:"req,1" db:"req" json:"req"`
@@ -5007,7 +5007,7 @@ func (p *StorageAdminServiceAddAdminTaskArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceAddAdminTaskResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -5116,7 +5116,7 @@ func (p *StorageAdminServiceAddAdminTaskResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceStopAdminTaskArgs struct {
 	thrift.IRequest
 	Req *StopAdminTaskRequest `thrift:"req,1" db:"req" json:"req"`
@@ -5225,7 +5225,7 @@ func (p *StorageAdminServiceStopAdminTaskArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceStopAdminTaskResult struct {
 	thrift.IResponse
 	Success *AdminExecResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -5334,7 +5334,7 @@ func (p *StorageAdminServiceStopAdminTaskResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type StorageAdminServiceListClusterInfoArgs struct {
 	thrift.IRequest
 	Req *ListClusterInfoReq `thrift:"req,1" db:"req" json:"req"`
@@ -5443,7 +5443,7 @@ func (p *StorageAdminServiceListClusterInfoArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type StorageAdminServiceListClusterInfoResult struct {
 	thrift.IResponse
 	Success *ListClusterInfoResp `thrift:"success,0" db:"success" json:"success,omitempty"`

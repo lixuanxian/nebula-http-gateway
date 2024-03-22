@@ -79,7 +79,7 @@ func NewGeneralStorageServiceClientProtocol(prot thrift.Protocol) *GeneralStorag
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GeneralStorageServiceClient) Get(req *KVGetRequest) (_r *KVGetResponse, err error) {
 	args := GeneralStorageServiceGetArgs{
 		Req: req,
@@ -102,7 +102,7 @@ func (p *GeneralStorageServiceClient) recvGet() (value *KVGetResponse, err error
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GeneralStorageServiceClient) Put(req *KVPutRequest) (_r *ExecResponse, err error) {
 	args := GeneralStorageServicePutArgs{
 		Req: req,
@@ -125,7 +125,7 @@ func (p *GeneralStorageServiceClient) recvPut() (value *ExecResponse, err error)
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GeneralStorageServiceClient) Remove(req *KVRemoveRequest) (_r *ExecResponse, err error) {
 	args := GeneralStorageServiceRemoveArgs{
 		Req: req,
@@ -184,7 +184,7 @@ func NewGeneralStorageServiceThreadsafeClientProtocol(prot thrift.Protocol) *Gen
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GeneralStorageServiceThreadsafeClient) Get(req *KVGetRequest) (_r *KVGetResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -209,7 +209,7 @@ func (p *GeneralStorageServiceThreadsafeClient) recvGet() (value *KVGetResponse,
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GeneralStorageServiceThreadsafeClient) Put(req *KVPutRequest) (_r *ExecResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -234,7 +234,7 @@ func (p *GeneralStorageServiceThreadsafeClient) recvPut() (value *ExecResponse, 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GeneralStorageServiceThreadsafeClient) Remove(req *KVRemoveRequest) (_r *ExecResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -279,7 +279,7 @@ func NewGeneralStorageServiceChannelClient(channel thrift.RequestChannel) *Gener
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GeneralStorageServiceChannelClient) Get(ctx context.Context, req *KVGetRequest) (_r *KVGetResponse, err error) {
 	args := GeneralStorageServiceGetArgs{
 		Req: req,
@@ -294,7 +294,7 @@ func (p *GeneralStorageServiceChannelClient) Get(ctx context.Context, req *KVGet
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GeneralStorageServiceChannelClient) Put(ctx context.Context, req *KVPutRequest) (_r *ExecResponse, err error) {
 	args := GeneralStorageServicePutArgs{
 		Req: req,
@@ -309,7 +309,7 @@ func (p *GeneralStorageServiceChannelClient) Put(ctx context.Context, req *KVPut
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GeneralStorageServiceChannelClient) Remove(ctx context.Context, req *KVRemoveRequest) (_r *ExecResponse, err error) {
 	args := GeneralStorageServiceRemoveArgs{
 		Req: req,
@@ -504,7 +504,7 @@ func (p *generalStorageServiceProcessorRemove) RunContext(ctx context.Context, a
 // HELPER FUNCTIONS AND STRUCTURES
 
 // Attributes:
-//  - Req
+//   - Req
 type GeneralStorageServiceGetArgs struct {
 	thrift.IRequest
 	Req *KVGetRequest `thrift:"req,1" db:"req" json:"req"`
@@ -613,7 +613,7 @@ func (p *GeneralStorageServiceGetArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GeneralStorageServiceGetResult struct {
 	thrift.IResponse
 	Success *KVGetResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -722,7 +722,7 @@ func (p *GeneralStorageServiceGetResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GeneralStorageServicePutArgs struct {
 	thrift.IRequest
 	Req *KVPutRequest `thrift:"req,1" db:"req" json:"req"`
@@ -831,7 +831,7 @@ func (p *GeneralStorageServicePutArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GeneralStorageServicePutResult struct {
 	thrift.IResponse
 	Success *ExecResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -940,7 +940,7 @@ func (p *GeneralStorageServicePutResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GeneralStorageServiceRemoveArgs struct {
 	thrift.IRequest
 	Req *KVRemoveRequest `thrift:"req,1" db:"req" json:"req"`
@@ -1049,7 +1049,7 @@ func (p *GeneralStorageServiceRemoveArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GeneralStorageServiceRemoveResult struct {
 	thrift.IResponse
 	Success *ExecResponse `thrift:"success,0" db:"success" json:"success,omitempty"`

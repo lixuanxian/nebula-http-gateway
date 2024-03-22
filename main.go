@@ -110,18 +110,12 @@ func main() {
 		close(done)
 	}()
 
-	//InsertFilter是提供一个过滤函数
+	// InsertFilter is used to provide a filtering function
 	beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
-		//允许访问所有源
-		AllowAllOrigins: true,
-		//可选参数"GET", "POST", "PUT", "DELETE", "OPTIONS" (*为所有)
-		//其中Options跨域复杂请求预检
-		AllowMethods: []string{"*"},
-		//指的是允许的Header的种类
-		AllowHeaders: []string{"*"},
-		//公开的HTTP标头列表
-		ExposeHeaders: []string{"Content-Length"},
-		//如果设置，则允许共享身份验证凭据，例如cookie
+		AllowOrigins:     []string{"*"},
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Methods", "Access-Control-Allow-Headers", "Content-Type"},
+		ExposeHeaders:    []string{"Content-Length", "Access-Control-Allow-Origin", "Access-Control-Allow-Methods", "Access-Control-Allow-Headers", "Content-Type"},
 		AllowCredentials: true,
 	}))
 

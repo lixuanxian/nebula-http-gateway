@@ -89,8 +89,8 @@ func NewGraphServiceClientProtocol(prot thrift.Protocol) *GraphServiceClient {
 }
 
 // Parameters:
-//  - Username
-//  - Password
+//   - Username
+//   - Password
 func (p *GraphServiceClient) Authenticate(username []byte, password []byte) (_r *AuthResponse, err error) {
 	args := GraphServiceAuthenticateArgs{
 		Username: username,
@@ -114,7 +114,7 @@ func (p *GraphServiceClient) recvAuthenticate() (value *AuthResponse, err error)
 }
 
 // Parameters:
-//  - SessionId
+//   - SessionId
 func (p *GraphServiceClient) Signout(sessionId int64) (err error) {
 	args := GraphServiceSignoutArgs{
 		SessionId: sessionId,
@@ -127,8 +127,8 @@ func (p *GraphServiceClient) Signout(sessionId int64) (err error) {
 }
 
 // Parameters:
-//  - SessionId
-//  - Stmt
+//   - SessionId
+//   - Stmt
 func (p *GraphServiceClient) Execute(sessionId int64, stmt []byte) (_r *ExecutionResponse, err error) {
 	args := GraphServiceExecuteArgs{
 		SessionId: sessionId,
@@ -152,8 +152,8 @@ func (p *GraphServiceClient) recvExecute() (value *ExecutionResponse, err error)
 }
 
 // Parameters:
-//  - SessionId
-//  - Stmt
+//   - SessionId
+//   - Stmt
 func (p *GraphServiceClient) ExecuteJson(sessionId int64, stmt []byte) (_r []byte, err error) {
 	args := GraphServiceExecuteJsonArgs{
 		SessionId: sessionId,
@@ -213,8 +213,8 @@ func NewGraphServiceThreadsafeClientProtocol(prot thrift.Protocol) *GraphService
 }
 
 // Parameters:
-//  - Username
-//  - Password
+//   - Username
+//   - Password
 func (p *GraphServiceThreadsafeClient) Authenticate(username []byte, password []byte) (_r *AuthResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -240,7 +240,7 @@ func (p *GraphServiceThreadsafeClient) recvAuthenticate() (value *AuthResponse, 
 }
 
 // Parameters:
-//  - SessionId
+//   - SessionId
 func (p *GraphServiceThreadsafeClient) Signout(sessionId int64) (err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -255,8 +255,8 @@ func (p *GraphServiceThreadsafeClient) Signout(sessionId int64) (err error) {
 }
 
 // Parameters:
-//  - SessionId
-//  - Stmt
+//   - SessionId
+//   - Stmt
 func (p *GraphServiceThreadsafeClient) Execute(sessionId int64, stmt []byte) (_r *ExecutionResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -282,8 +282,8 @@ func (p *GraphServiceThreadsafeClient) recvExecute() (value *ExecutionResponse, 
 }
 
 // Parameters:
-//  - SessionId
-//  - Stmt
+//   - SessionId
+//   - Stmt
 func (p *GraphServiceThreadsafeClient) ExecuteJson(sessionId int64, stmt []byte) (_r []byte, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -329,8 +329,8 @@ func NewGraphServiceChannelClient(channel thrift.RequestChannel) *GraphServiceCh
 }
 
 // Parameters:
-//  - Username
-//  - Password
+//   - Username
+//   - Password
 func (p *GraphServiceChannelClient) Authenticate(ctx context.Context, username []byte, password []byte) (_r *AuthResponse, err error) {
 	args := GraphServiceAuthenticateArgs{
 		Username: username,
@@ -346,7 +346,7 @@ func (p *GraphServiceChannelClient) Authenticate(ctx context.Context, username [
 }
 
 // Parameters:
-//  - SessionId
+//   - SessionId
 func (p *GraphServiceChannelClient) Signout(ctx context.Context, sessionId int64) (err error) {
 	args := GraphServiceSignoutArgs{
 		SessionId: sessionId,
@@ -360,8 +360,8 @@ func (p *GraphServiceChannelClient) Signout(ctx context.Context, sessionId int64
 }
 
 // Parameters:
-//  - SessionId
-//  - Stmt
+//   - SessionId
+//   - Stmt
 func (p *GraphServiceChannelClient) Execute(ctx context.Context, sessionId int64, stmt []byte) (_r *ExecutionResponse, err error) {
 	args := GraphServiceExecuteArgs{
 		SessionId: sessionId,
@@ -377,8 +377,8 @@ func (p *GraphServiceChannelClient) Execute(ctx context.Context, sessionId int64
 }
 
 // Parameters:
-//  - SessionId
-//  - Stmt
+//   - SessionId
+//   - Stmt
 func (p *GraphServiceChannelClient) ExecuteJson(ctx context.Context, sessionId int64, stmt []byte) (_r []byte, err error) {
 	args := GraphServiceExecuteJsonArgs{
 		SessionId: sessionId,
@@ -622,8 +622,8 @@ func (p *graphServiceProcessorExecuteJson) RunContext(ctx context.Context, argSt
 // HELPER FUNCTIONS AND STRUCTURES
 
 // Attributes:
-//  - Username
-//  - Password
+//   - Username
+//   - Password
 type GraphServiceAuthenticateArgs struct {
 	thrift.IRequest
 	Username []byte `thrift:"username,1" db:"username" json:"username"`
@@ -752,7 +752,7 @@ func (p *GraphServiceAuthenticateArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphServiceAuthenticateResult struct {
 	thrift.IResponse
 	Success *AuthResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -861,7 +861,7 @@ func (p *GraphServiceAuthenticateResult) String() string {
 }
 
 // Attributes:
-//  - SessionId
+//   - SessionId
 type GraphServiceSignoutArgs struct {
 	thrift.IRequest
 	SessionId int64 `thrift:"sessionId,1" db:"sessionId" json:"sessionId"`
@@ -955,8 +955,8 @@ func (p *GraphServiceSignoutArgs) String() string {
 }
 
 // Attributes:
-//  - SessionId
-//  - Stmt
+//   - SessionId
+//   - Stmt
 type GraphServiceExecuteArgs struct {
 	thrift.IRequest
 	SessionId int64  `thrift:"sessionId,1" db:"sessionId" json:"sessionId"`
@@ -1085,7 +1085,7 @@ func (p *GraphServiceExecuteArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphServiceExecuteResult struct {
 	thrift.IResponse
 	Success *ExecutionResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -1194,8 +1194,8 @@ func (p *GraphServiceExecuteResult) String() string {
 }
 
 // Attributes:
-//  - SessionId
-//  - Stmt
+//   - SessionId
+//   - Stmt
 type GraphServiceExecuteJsonArgs struct {
 	thrift.IRequest
 	SessionId int64  `thrift:"sessionId,1" db:"sessionId" json:"sessionId"`
@@ -1324,7 +1324,7 @@ func (p *GraphServiceExecuteJsonArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphServiceExecuteJsonResult struct {
 	thrift.IResponse
 	Success []byte `thrift:"success,0" db:"success" json:"success,omitempty"`

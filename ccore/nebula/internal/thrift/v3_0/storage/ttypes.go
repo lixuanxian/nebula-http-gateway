@@ -262,9 +262,9 @@ func EngineSignTypeFromString(s string) (EngineSignType, error) {
 func EngineSignTypePtr(v EngineSignType) *EngineSignType { return &v }
 
 // Attributes:
-//  - SessionID
-//  - PlanID
-//  - ProfileDetail
+//   - SessionID
+//   - PlanID
+//   - ProfileDetail
 type RequestCommon struct {
 	SessionID     *nebula0.SessionID       `thrift:"session_id,1,optional" db:"session_id" json:"session_id,omitempty"`
 	PlanID        *nebula0.ExecutionPlanID `thrift:"plan_id,2,optional" db:"plan_id" json:"plan_id,omitempty"`
@@ -525,9 +525,9 @@ func (p *RequestCommon) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - PartID
-//  - Leader
+//   - Code
+//   - PartID
+//   - Leader
 type PartitionResult_ struct {
 	Code   nebula0.ErrorCode   `thrift:"code,1,required" db:"code" json:"code"`
 	PartID nebula0.PartitionID `thrift:"part_id,2,required" db:"part_id" json:"part_id"`
@@ -766,9 +766,9 @@ func (p *PartitionResult_) String() string {
 }
 
 // Attributes:
-//  - FailedParts
-//  - LatencyInUs
-//  - LatencyDetailUs
+//   - FailedParts
+//   - LatencyInUs
+//   - LatencyDetailUs
 type ResponseCommon struct {
 	FailedParts     []*PartitionResult_ `thrift:"failed_parts,1,required" db:"failed_parts" json:"failed_parts"`
 	LatencyInUs     int64               `thrift:"latency_in_us,2,required" db:"latency_in_us" json:"latency_in_us"`
@@ -1047,9 +1047,9 @@ func (p *ResponseCommon) String() string {
 }
 
 // Attributes:
-//  - Alias
-//  - Prop
-//  - Stat
+//   - Alias
+//   - Prop
+//   - Stat
 type StatProp struct {
 	Alias []byte   `thrift:"alias,1" db:"alias" json:"alias"`
 	Prop  []byte   `thrift:"prop,2" db:"prop" json:"prop"`
@@ -1262,8 +1262,8 @@ func (p *StatProp) String() string {
 }
 
 // Attributes:
-//  - Alias
-//  - Expr
+//   - Alias
+//   - Expr
 type Expr struct {
 	Alias []byte `thrift:"alias,1" db:"alias" json:"alias"`
 	Expr  []byte `thrift:"expr,2" db:"expr" json:"expr"`
@@ -1429,8 +1429,8 @@ func (p *Expr) String() string {
 }
 
 // Attributes:
-//  - Type
-//  - Props
+//   - Type
+//   - Props
 type EdgeProp struct {
 	Type  nebula0.EdgeType `thrift:"type,1" db:"type" json:"type"`
 	Props [][]byte         `thrift:"props,2" db:"props" json:"props"`
@@ -1618,8 +1618,8 @@ func (p *EdgeProp) String() string {
 }
 
 // Attributes:
-//  - Tag
-//  - Props
+//   - Tag
+//   - Props
 type VertexProp struct {
 	Tag   nebula0.TagID `thrift:"tag,1" db:"tag" json:"tag"`
 	Props [][]byte      `thrift:"props,2" db:"props" json:"props"`
@@ -1807,8 +1807,8 @@ func (p *VertexProp) String() string {
 }
 
 // Attributes:
-//  - Prop
-//  - Direction
+//   - Prop
+//   - Direction
 type OrderBy struct {
 	Prop      []byte         `thrift:"prop,1" db:"prop" json:"prop"`
 	Direction OrderDirection `thrift:"direction,2" db:"direction" json:"direction"`
@@ -1975,17 +1975,17 @@ func (p *OrderBy) String() string {
 }
 
 // Attributes:
-//  - EdgeTypes
-//  - EdgeDirection
-//  - Dedup
-//  - StatProps
-//  - VertexProps
-//  - EdgeProps
-//  - Expressions
-//  - OrderBy
-//  - Random
-//  - Limit
-//  - Filter
+//   - EdgeTypes
+//   - EdgeDirection
+//   - Dedup
+//   - StatProps
+//   - VertexProps
+//   - EdgeProps
+//   - Expressions
+//   - OrderBy
+//   - Random
+//   - Limit
+//   - Filter
 type TraverseSpec struct {
 	EdgeTypes     []nebula0.EdgeType `thrift:"edge_types,1" db:"edge_types" json:"edge_types"`
 	EdgeDirection EdgeDirection      `thrift:"edge_direction,2" db:"edge_direction" json:"edge_direction"`
@@ -2764,11 +2764,11 @@ func (p *TraverseSpec) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - ColumnNames
-//  - Parts
-//  - TraverseSpec
-//  - Common
+//   - SpaceID
+//   - ColumnNames
+//   - Parts
+//   - TraverseSpec
+//   - Common
 type GetNeighborsRequest struct {
 	SpaceID      nebula0.GraphSpaceID                   `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	ColumnNames  [][]byte                               `thrift:"column_names,2" db:"column_names" json:"column_names"`
@@ -3172,8 +3172,8 @@ func (p *GetNeighborsRequest) String() string {
 }
 
 // Attributes:
-//  - Result_
-//  - Vertices
+//   - Result_
+//   - Vertices
 type GetNeighborsResponse struct {
 	Result_  *ResponseCommon  `thrift:"result,1,required" db:"result" json:"result"`
 	Vertices *nebula0.DataSet `thrift:"vertices,2,optional" db:"vertices" json:"vertices,omitempty"`
@@ -3374,7 +3374,7 @@ func (p *GetNeighborsResponse) String() string {
 }
 
 // Attributes:
-//  - Result_
+//   - Result_
 type ExecResponse struct {
 	Result_ *ResponseCommon `thrift:"result,1,required" db:"result" json:"result"`
 }
@@ -3514,16 +3514,16 @@ func (p *ExecResponse) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - VertexProps
-//  - EdgeProps
-//  - Expressions
-//  - Dedup
-//  - OrderBy
-//  - Limit
-//  - Filter
-//  - Common
+//   - SpaceID
+//   - Parts
+//   - VertexProps
+//   - EdgeProps
+//   - Expressions
+//   - Dedup
+//   - OrderBy
+//   - Limit
+//   - Filter
+//   - Common
 type GetPropRequest struct {
 	SpaceID     nebula0.GraphSpaceID                   `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts       map[nebula0.PartitionID][]*nebula0.Row `thrift:"parts,2" db:"parts" json:"parts"`
@@ -4253,8 +4253,8 @@ func (p *GetPropRequest) String() string {
 }
 
 // Attributes:
-//  - Result_
-//  - Props
+//   - Result_
+//   - Props
 type GetPropResponse struct {
 	Result_ *ResponseCommon  `thrift:"result,1" db:"result" json:"result"`
 	Props   *nebula0.DataSet `thrift:"props,2,optional" db:"props" json:"props,omitempty"`
@@ -4449,8 +4449,8 @@ func (p *GetPropResponse) String() string {
 }
 
 // Attributes:
-//  - TagID
-//  - Props
+//   - TagID
+//   - Props
 type NewTag_ struct {
 	TagID nebula0.TagID    `thrift:"tag_id,1" db:"tag_id" json:"tag_id"`
 	Props []*nebula0.Value `thrift:"props,2" db:"props" json:"props"`
@@ -4636,8 +4636,8 @@ func (p *NewTag_) String() string {
 }
 
 // Attributes:
-//  - Id
-//  - Tags
+//   - Id
+//   - Tags
 type NewVertex_ struct {
 	Id   *nebula0.Value `thrift:"id,1" db:"id" json:"id"`
 	Tags []*NewTag_     `thrift:"tags,2" db:"tags" json:"tags"`
@@ -4834,10 +4834,10 @@ func (p *NewVertex_) String() string {
 }
 
 // Attributes:
-//  - Src
-//  - EdgeType
-//  - Ranking
-//  - Dst
+//   - Src
+//   - EdgeType
+//   - Ranking
+//   - Dst
 type EdgeKey struct {
 	Src      *nebula0.Value      `thrift:"src,1" db:"src" json:"src"`
 	EdgeType nebula0.EdgeType    `thrift:"edge_type,2" db:"edge_type" json:"edge_type"`
@@ -5122,8 +5122,8 @@ func (p *EdgeKey) String() string {
 }
 
 // Attributes:
-//  - Key
-//  - Props
+//   - Key
+//   - Props
 type NewEdge_ struct {
 	Key   *EdgeKey         `thrift:"key,1" db:"key" json:"key"`
 	Props []*nebula0.Value `thrift:"props,2" db:"props" json:"props"`
@@ -5322,12 +5322,12 @@ func (p *NewEdge_) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - PropNames
-//  - IfNotExists
-//  - IgnoreExistedIndex
-//  - Common
+//   - SpaceID
+//   - Parts
+//   - PropNames
+//   - IfNotExists
+//   - IgnoreExistedIndex
+//   - Common
 type AddVerticesRequest struct {
 	SpaceID            nebula0.GraphSpaceID                  `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts              map[nebula0.PartitionID][]*NewVertex_ `thrift:"parts,2" db:"parts" json:"parts"`
@@ -5792,12 +5792,12 @@ func (p *AddVerticesRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - PropNames
-//  - IfNotExists
-//  - IgnoreExistedIndex
-//  - Common
+//   - SpaceID
+//   - Parts
+//   - PropNames
+//   - IfNotExists
+//   - IgnoreExistedIndex
+//   - Common
 type AddEdgesRequest struct {
 	SpaceID            nebula0.GraphSpaceID                `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts              map[nebula0.PartitionID][]*NewEdge_ `thrift:"parts,2" db:"parts" json:"parts"`
@@ -6232,9 +6232,9 @@ func (p *AddEdgesRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - Common
+//   - SpaceID
+//   - Parts
+//   - Common
 type DeleteVerticesRequest struct {
 	SpaceID nebula0.GraphSpaceID                     `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts   map[nebula0.PartitionID][]*nebula0.Value `thrift:"parts,2" db:"parts" json:"parts"`
@@ -6510,9 +6510,9 @@ func (p *DeleteVerticesRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - Common
+//   - SpaceID
+//   - Parts
+//   - Common
 type DeleteEdgesRequest struct {
 	SpaceID nebula0.GraphSpaceID               `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts   map[nebula0.PartitionID][]*EdgeKey `thrift:"parts,2" db:"parts" json:"parts"`
@@ -6788,8 +6788,8 @@ func (p *DeleteEdgesRequest) String() string {
 }
 
 // Attributes:
-//  - Id
-//  - Tags
+//   - Id
+//   - Tags
 type DelTags struct {
 	Id   *nebula0.Value  `thrift:"id,1" db:"id" json:"id"`
 	Tags []nebula0.TagID `thrift:"tags,2" db:"tags" json:"tags"`
@@ -6989,9 +6989,9 @@ func (p *DelTags) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - Common
+//   - SpaceID
+//   - Parts
+//   - Common
 type DeleteTagsRequest struct {
 	SpaceID nebula0.GraphSpaceID               `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts   map[nebula0.PartitionID][]*DelTags `thrift:"parts,2" db:"parts" json:"parts"`
@@ -7267,8 +7267,8 @@ func (p *DeleteTagsRequest) String() string {
 }
 
 // Attributes:
-//  - Result_
-//  - Props
+//   - Result_
+//   - Props
 type UpdateResponse struct {
 	Result_ *ResponseCommon  `thrift:"result,1,required" db:"result" json:"result"`
 	Props   *nebula0.DataSet `thrift:"props,2,optional" db:"props" json:"props,omitempty"`
@@ -7469,8 +7469,8 @@ func (p *UpdateResponse) String() string {
 }
 
 // Attributes:
-//  - Name
-//  - Value
+//   - Name
+//   - Value
 type UpdatedProp struct {
 	Name  []byte `thrift:"name,1,required" db:"name" json:"name"`
 	Value []byte `thrift:"value,2,required" db:"value" json:"value"`
@@ -7647,15 +7647,15 @@ func (p *UpdatedProp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - PartID
-//  - VertexID
-//  - TagID
-//  - UpdatedProps
-//  - Insertable
-//  - ReturnProps
-//  - Condition
-//  - Common
+//   - SpaceID
+//   - PartID
+//   - VertexID
+//   - TagID
+//   - UpdatedProps
+//   - Insertable
+//   - ReturnProps
+//   - Condition
+//   - Common
 type UpdateVertexRequest struct {
 	SpaceID      nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	PartID       nebula0.PartitionID  `thrift:"part_id,2" db:"part_id" json:"part_id"`
@@ -8243,14 +8243,14 @@ func (p *UpdateVertexRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - PartID
-//  - EdgeKey
-//  - UpdatedProps
-//  - Insertable
-//  - ReturnProps
-//  - Condition
-//  - Common
+//   - SpaceID
+//   - PartID
+//   - EdgeKey
+//   - UpdatedProps
+//   - Insertable
+//   - ReturnProps
+//   - Condition
+//   - Common
 type UpdateEdgeRequest struct {
 	SpaceID      nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	PartID       nebula0.PartitionID  `thrift:"part_id,2" db:"part_id" json:"part_id"`
@@ -8787,10 +8787,10 @@ func (p *UpdateEdgeRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - PartID
-//  - Name
-//  - Common
+//   - SpaceID
+//   - PartID
+//   - Name
+//   - Common
 type GetUUIDReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	PartID  nebula0.PartitionID  `thrift:"part_id,2" db:"part_id" json:"part_id"`
@@ -9064,8 +9064,8 @@ func (p *GetUUIDReq) String() string {
 }
 
 // Attributes:
-//  - Result_
-//  - Id
+//   - Result_
+//   - Id
 type GetUUIDResp struct {
 	Result_ *ResponseCommon `thrift:"result,1,required" db:"result" json:"result"`
 	Id      *nebula0.Value  `thrift:"id,2" db:"id" json:"id"`
@@ -9264,9 +9264,9 @@ func (p *GetUUIDResp) String() string {
 }
 
 // Attributes:
-//  - Result_
-//  - Data
-//  - StatData
+//   - Result_
+//   - Data
+//   - StatData
 type LookupIndexResp struct {
 	Result_  *ResponseCommon  `thrift:"result,1,required" db:"result" json:"result"`
 	Data     *nebula0.DataSet `thrift:"data,2,optional" db:"data" json:"data,omitempty"`
@@ -9528,12 +9528,12 @@ func (p *LookupIndexResp) String() string {
 }
 
 // Attributes:
-//  - ColumnName
-//  - ScanType
-//  - BeginValue
-//  - EndValue
-//  - IncludeBegin
-//  - IncludeEnd
+//   - ColumnName
+//   - ScanType
+//   - BeginValue
+//   - EndValue
+//   - IncludeBegin
+//   - IncludeEnd
 type IndexColumnHint struct {
 	ColumnName   []byte         `thrift:"column_name,1" db:"column_name" json:"column_name"`
 	ScanType     ScanType       `thrift:"scan_type,2" db:"scan_type" json:"scan_type"`
@@ -9911,9 +9911,9 @@ func (p *IndexColumnHint) String() string {
 }
 
 // Attributes:
-//  - IndexID
-//  - Filter
-//  - ColumnHints
+//   - IndexID
+//   - Filter
+//   - ColumnHints
 type IndexQueryContext struct {
 	IndexID     nebula0.IndexID    `thrift:"index_id,1" db:"index_id" json:"index_id"`
 	Filter      []byte             `thrift:"filter,2" db:"filter" json:"filter"`
@@ -10145,8 +10145,8 @@ func (p *IndexQueryContext) String() string {
 }
 
 // Attributes:
-//  - Contexts
-//  - SchemaID
+//   - Contexts
+//   - SchemaID
 type IndexSpec struct {
 	Contexts []*IndexQueryContext `thrift:"contexts,1,required" db:"contexts" json:"contexts"`
 	SchemaID *nebula0.SchemaID    `thrift:"schema_id,2" db:"schema_id" json:"schema_id"`
@@ -10349,14 +10349,14 @@ func (p *IndexSpec) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - Indices
-//  - ReturnColumns
-//  - Common
-//  - Limit
-//  - OrderBy
-//  - StatColumns
+//   - SpaceID
+//   - Parts
+//   - Indices
+//   - ReturnColumns
+//   - Common
+//   - Limit
+//   - OrderBy
+//   - StatColumns
 type LookupIndexRequest struct {
 	SpaceID       nebula0.GraphSpaceID  `thrift:"space_id,1,required" db:"space_id" json:"space_id"`
 	Parts         []nebula0.PartitionID `thrift:"parts,2,required" db:"parts" json:"parts"`
@@ -10960,11 +10960,11 @@ func (p *LookupIndexRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - Indices
-//  - TraverseSpec
-//  - Common
+//   - SpaceID
+//   - Parts
+//   - Indices
+//   - TraverseSpec
+//   - Common
 type LookupAndTraverseRequest struct {
 	SpaceID      nebula0.GraphSpaceID  `thrift:"space_id,1,required" db:"space_id" json:"space_id"`
 	Parts        []nebula0.PartitionID `thrift:"parts,2,required" db:"parts" json:"parts"`
@@ -11345,7 +11345,7 @@ func (p *LookupAndTraverseRequest) String() string {
 }
 
 // Attributes:
-//  - NextCursor
+//   - NextCursor
 type ScanCursor struct {
 	NextCursor []byte `thrift:"next_cursor,1,optional" db:"next_cursor" json:"next_cursor,omitempty"`
 }
@@ -11472,16 +11472,16 @@ func (p *ScanCursor) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - ReturnColumns
-//  - Limit
-//  - StartTime
-//  - EndTime
-//  - Filter
-//  - OnlyLatestVersion
-//  - EnableReadFromFollower
-//  - Common
+//   - SpaceID
+//   - Parts
+//   - ReturnColumns
+//   - Limit
+//   - StartTime
+//   - EndTime
+//   - Filter
+//   - OnlyLatestVersion
+//   - EnableReadFromFollower
+//   - Common
 type ScanVertexRequest struct {
 	SpaceID                nebula0.GraphSpaceID                `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts                  map[nebula0.PartitionID]*ScanCursor `thrift:"parts,2" db:"parts" json:"parts"`
@@ -12120,16 +12120,16 @@ func (p *ScanVertexRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - ReturnColumns
-//  - Limit
-//  - StartTime
-//  - EndTime
-//  - Filter
-//  - OnlyLatestVersion
-//  - EnableReadFromFollower
-//  - Common
+//   - SpaceID
+//   - Parts
+//   - ReturnColumns
+//   - Limit
+//   - StartTime
+//   - EndTime
+//   - Filter
+//   - OnlyLatestVersion
+//   - EnableReadFromFollower
+//   - Common
 type ScanEdgeRequest struct {
 	SpaceID                nebula0.GraphSpaceID                `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts                  map[nebula0.PartitionID]*ScanCursor `thrift:"parts,2" db:"parts" json:"parts"`
@@ -12768,9 +12768,9 @@ func (p *ScanEdgeRequest) String() string {
 }
 
 // Attributes:
-//  - Result_
-//  - Props
-//  - Cursors
+//   - Result_
+//   - Props
+//   - Cursors
 type ScanResponse struct {
 	Result_ *ResponseCommon                     `thrift:"result,1,required" db:"result" json:"result"`
 	Props   *nebula0.DataSet                    `thrift:"props,2,optional" db:"props" json:"props,omitempty"`
@@ -13046,9 +13046,9 @@ func (p *ScanResponse) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - TaskSpecificParas
+//   - SpaceID
+//   - Parts
+//   - TaskSpecificParas
 type TaskPara struct {
 	SpaceID           nebula0.GraphSpaceID  `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts             []nebula0.PartitionID `thrift:"parts,2,optional" db:"parts" json:"parts,omitempty"`
@@ -13319,9 +13319,9 @@ func (p *TaskPara) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - ReturnPartly
+//   - SpaceID
+//   - Parts
+//   - ReturnPartly
 type KVGetRequest struct {
 	SpaceID      nebula0.GraphSpaceID             `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts        map[nebula0.PartitionID][][]byte `thrift:"parts,2" db:"parts" json:"parts"`
@@ -13585,8 +13585,8 @@ func (p *KVGetRequest) String() string {
 }
 
 // Attributes:
-//  - Result_
-//  - KeyValues
+//   - Result_
+//   - KeyValues
 type KVGetResponse struct {
 	Result_   *ResponseCommon   `thrift:"result,1,required" db:"result" json:"result"`
 	KeyValues map[string][]byte `thrift:"key_values,2" db:"key_values" json:"key_values"`
@@ -13802,8 +13802,8 @@ func (p *KVGetResponse) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
+//   - SpaceID
+//   - Parts
 type KVPutRequest struct {
 	SpaceID nebula0.GraphSpaceID                        `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts   map[nebula0.PartitionID][]*nebula0.KeyValue `thrift:"parts,2" db:"parts" json:"parts"`
@@ -14019,8 +14019,8 @@ func (p *KVPutRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
+//   - SpaceID
+//   - Parts
 type KVRemoveRequest struct {
 	SpaceID nebula0.GraphSpaceID             `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts   map[nebula0.PartitionID][][]byte `thrift:"parts,2" db:"parts" json:"parts"`
@@ -14238,8 +14238,8 @@ func (p *KVRemoveRequest) String() string {
 }
 
 // Attributes:
-//  - Result_
-//  - Stats
+//   - Result_
+//   - Stats
 type AdminExecResp struct {
 	Result_ *ResponseCommon  `thrift:"result,1,required" db:"result" json:"result"`
 	Stats   *meta1.StatsItem `thrift:"stats,2,optional" db:"stats" json:"stats,omitempty"`
@@ -14440,9 +14440,9 @@ func (p *AdminExecResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - PartID
-//  - NewLeader_
+//   - SpaceID
+//   - PartID
+//   - NewLeader_
 type TransLeaderReq struct {
 	SpaceID    nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	PartID     nebula0.PartitionID  `thrift:"part_id,2" db:"part_id" json:"part_id"`
@@ -14670,10 +14670,10 @@ func (p *TransLeaderReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - PartID
-//  - AsLearner
-//  - Peers
+//   - SpaceID
+//   - PartID
+//   - AsLearner
+//   - Peers
 type AddPartReq struct {
 	SpaceID   nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	PartID    nebula0.PartitionID  `thrift:"part_id,2" db:"part_id" json:"part_id"`
@@ -14952,9 +14952,9 @@ func (p *AddPartReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - PartID
-//  - Learner
+//   - SpaceID
+//   - PartID
+//   - Learner
 type AddLearnerReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	PartID  nebula0.PartitionID  `thrift:"part_id,2" db:"part_id" json:"part_id"`
@@ -15182,8 +15182,8 @@ func (p *AddLearnerReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - PartID
+//   - SpaceID
+//   - PartID
 type RemovePartReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	PartID  nebula0.PartitionID  `thrift:"part_id,2" db:"part_id" json:"part_id"`
@@ -15351,10 +15351,10 @@ func (p *RemovePartReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - PartID
-//  - Peer
-//  - Add
+//   - SpaceID
+//   - PartID
+//   - Peer
+//   - Add
 type MemberChangeReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	PartID  nebula0.PartitionID  `thrift:"part_id,2" db:"part_id" json:"part_id"`
@@ -15628,9 +15628,9 @@ func (p *MemberChangeReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - PartID
-//  - Target
+//   - SpaceID
+//   - PartID
+//   - Target
 type CatchUpDataReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	PartID  nebula0.PartitionID  `thrift:"part_id,2" db:"part_id" json:"part_id"`
@@ -15926,8 +15926,8 @@ func (p *GetLeaderReq) String() string {
 }
 
 // Attributes:
-//  - SpaceIds
-//  - Name
+//   - SpaceIds
+//   - Name
 type CreateCPRequest struct {
 	SpaceIds []nebula0.GraphSpaceID `thrift:"space_ids,1" db:"space_ids" json:"space_ids"`
 	Name     []byte                 `thrift:"name,2" db:"name" json:"name"`
@@ -16115,8 +16115,8 @@ func (p *CreateCPRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceIds
-//  - Name
+//   - SpaceIds
+//   - Name
 type DropCPRequest struct {
 	SpaceIds []nebula0.GraphSpaceID `thrift:"space_ids,1" db:"space_ids" json:"space_ids"`
 	Name     []byte                 `thrift:"name,2" db:"name" json:"name"`
@@ -16304,8 +16304,8 @@ func (p *DropCPRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceIds
-//  - Sign
+//   - SpaceIds
+//   - Sign
 type BlockingSignRequest struct {
 	SpaceIds []nebula0.GraphSpaceID `thrift:"space_ids,1" db:"space_ids" json:"space_ids"`
 	Sign     EngineSignType         `thrift:"sign,2,required" db:"sign" json:"sign"`
@@ -16500,8 +16500,8 @@ func (p *BlockingSignRequest) String() string {
 }
 
 // Attributes:
-//  - Result_
-//  - LeaderParts
+//   - Result_
+//   - LeaderParts
 type GetLeaderPartsResp struct {
 	Result_     *ResponseCommon                                `thrift:"result,1,required" db:"result" json:"result"`
 	LeaderParts map[nebula0.GraphSpaceID][]nebula0.PartitionID `thrift:"leader_parts,2" db:"leader_parts" json:"leader_parts"`
@@ -16739,9 +16739,9 @@ func (p *GetLeaderPartsResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - PartID
-//  - Peers
+//   - SpaceID
+//   - PartID
+//   - Peers
 type CheckPeersReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	PartID  nebula0.PartitionID  `thrift:"part_id,2" db:"part_id" json:"part_id"`
@@ -16974,9 +16974,9 @@ func (p *CheckPeersReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - IndexID
+//   - SpaceID
+//   - Parts
+//   - IndexID
 type RebuildIndexRequest struct {
 	SpaceID nebula0.GraphSpaceID  `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts   []nebula0.PartitionID `thrift:"parts,2" db:"parts" json:"parts"`
@@ -17212,8 +17212,8 @@ func (p *RebuildIndexRequest) String() string {
 }
 
 // Attributes:
-//  - Result_
-//  - Info
+//   - Result_
+//   - Info
 type CreateCPResp struct {
 	Result_ *ResponseCommon           `thrift:"result,1,required" db:"result" json:"result"`
 	Info    []*nebula0.CheckpointInfo `thrift:"info,2" db:"info" json:"info"`
@@ -17418,8 +17418,8 @@ func (p *CreateCPResp) String() string {
 }
 
 // Attributes:
-//  - Result_
-//  - Dir
+//   - Result_
+//   - Dir
 type ListClusterInfoResp struct {
 	Result_ *ResponseCommon  `thrift:"result,1,required" db:"result" json:"result"`
 	Dir     *nebula0.DirInfo `thrift:"dir,2" db:"dir" json:"dir"`
@@ -17687,11 +17687,11 @@ func (p *ListClusterInfoReq) String() string {
 }
 
 // Attributes:
-//  - Cmd
-//  - JobID
-//  - TaskID
-//  - Para
-//  - Concurrency
+//   - Cmd
+//   - JobID
+//   - TaskID
+//   - Para
+//   - Concurrency
 type AddAdminTaskRequest struct {
 	Cmd         meta1.AdminCmd `thrift:"cmd,1" db:"cmd" json:"cmd"`
 	JobID       int32          `thrift:"job_id,2" db:"job_id" json:"job_id"`
@@ -18026,8 +18026,8 @@ func (p *AddAdminTaskRequest) String() string {
 }
 
 // Attributes:
-//  - JobID
-//  - TaskID
+//   - JobID
+//   - TaskID
 type StopAdminTaskRequest struct {
 	JobID  int32 `thrift:"job_id,1" db:"job_id" json:"job_id"`
 	TaskID int32 `thrift:"task_id,2" db:"task_id" json:"task_id"`
@@ -18193,12 +18193,12 @@ func (p *StopAdminTaskRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - PropNames
-//  - IfNotExists
-//  - Term
-//  - EdgeVersion
+//   - SpaceID
+//   - Parts
+//   - PropNames
+//   - IfNotExists
+//   - Term
+//   - EdgeVersion
 type ChainAddEdgesRequest struct {
 	SpaceID     nebula0.GraphSpaceID                `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts       map[nebula0.PartitionID][]*NewEdge_ `thrift:"parts,2" db:"parts" json:"parts"`
@@ -18634,11 +18634,11 @@ func (p *ChainAddEdgesRequest) String() string {
 }
 
 // Attributes:
-//  - UpdateEdgeRequest
-//  - Term
-//  - EdgeVersion
-//  - SpaceID
-//  - Parts
+//   - UpdateEdgeRequest
+//   - Term
+//   - EdgeVersion
+//   - SpaceID
+//   - Parts
 type ChainUpdateEdgeRequest struct {
 	UpdateEdgeRequest *UpdateEdgeRequest    `thrift:"update_edge_request,1" db:"update_edge_request" json:"update_edge_request"`
 	Term              int64                 `thrift:"term,2" db:"term" json:"term"`
@@ -19001,10 +19001,10 @@ func (p *ChainUpdateEdgeRequest) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Parts
-//  - TxnID
-//  - Term
+//   - SpaceID
+//   - Parts
+//   - TxnID
+//   - Term
 type ChainDeleteEdgesRequest struct {
 	SpaceID nebula0.GraphSpaceID               `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Parts   map[nebula0.PartitionID][]*EdgeKey `thrift:"parts,2" db:"parts" json:"parts"`

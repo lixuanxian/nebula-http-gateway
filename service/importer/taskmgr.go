@@ -74,7 +74,7 @@ func GetTaskMgr() *TaskMgr {
 }
 
 /*
-	`GetTask` get task from map and local sql
+`GetTask` get task from map and local sql
 */
 func (mgr *TaskMgr) GetTask(taskID string) (*Task, bool) {
 	_tid, _ := strconv.ParseUint(taskID, 0, 64)
@@ -91,15 +91,15 @@ func (mgr *TaskMgr) GetTask(taskID string) (*Task, bool) {
 }
 
 /*
-	`PutTask` put task into tasks map
+`PutTask` put task into tasks map
 */
 func (mgr *TaskMgr) PutTask(taskID string, task *Task) {
 	mgr.tasks.Store(taskID, task)
 }
 
 /*
-	`DelTask` will delete task in the map,
-	and put the task into local sql
+`DelTask` will delete task in the map,
+and put the task into local sql
 */
 func (mgr *TaskMgr) DelTask(taskID string) {
 	task, ok := mgr.getTaskFromMap(taskID)
@@ -113,8 +113,8 @@ func (mgr *TaskMgr) DelTask(taskID string) {
 }
 
 /*
-	`StopTask` will change the task status to `StatusStoped`,
-	and then call `DelTask`
+`StopTask` will change the task status to `StatusStoped`,
+and then call `DelTask`
 */
 func (mgr *TaskMgr) StopTask(taskID string) bool {
 	if task, ok := mgr.getTaskFromMap(taskID); ok {
@@ -133,7 +133,7 @@ func (mgr *TaskMgr) StopTask(taskID string) bool {
 }
 
 /*
-	`GetAllTaskIDs` will return all task ids in map
+`GetAllTaskIDs` will return all task ids in map
 */
 func (mgr *TaskMgr) GetAllTaskIDs() []string {
 	ids := make([]string, 0)
@@ -146,7 +146,7 @@ func (mgr *TaskMgr) GetAllTaskIDs() []string {
 }
 
 /*
-	`initDB` initialize local sql by open sql and create tasks table
+`initDB` initialize local sql by open sql and create tasks table
 */
 func initDB() {
 	dbFilePath := beego.AppConfig.String("sqlitedbfilepath")
@@ -245,8 +245,8 @@ func (action TaskAction) String() string {
 type TaskStatus int
 
 /*
-	the task in memory (map) has 2 status: processing, aborted;
-	and the task in local sql has 2 status: finished, stoped;
+the task in memory (map) has 2 status: processing, aborted;
+and the task in local sql has 2 status: finished, stoped;
 */
 const (
 	StatusUnknown TaskStatus = iota

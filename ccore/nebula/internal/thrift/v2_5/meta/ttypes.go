@@ -988,11 +988,11 @@ type ClusterID = int64
 func ClusterIDPtr(v ClusterID) *ClusterID { return &v }
 
 // Attributes:
-//  - SpaceID
-//  - TagID
-//  - EdgeType
-//  - IndexID
-//  - ClusterID
+//   - SpaceID
+//   - TagID
+//   - EdgeType
+//   - IndexID
+//   - ClusterID
 type ID struct {
 	SpaceID   *nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id,omitempty"`
 	TagID     *nebula0.TagID        `thrift:"tag_id,2" db:"tag_id" json:"tag_id,omitempty"`
@@ -1334,8 +1334,8 @@ func (p *ID) String() string {
 }
 
 // Attributes:
-//  - Type
-//  - TypeLength
+//   - Type
+//   - TypeLength
 type ColumnTypeDef struct {
 	Type       PropertyType `thrift:"type,1,required" db:"type" json:"type"`
 	TypeLength int16        `thrift:"type_length,2" db:"type_length" json:"type_length,omitempty"`
@@ -1478,11 +1478,11 @@ func (p *ColumnTypeDef) String() string {
 }
 
 // Attributes:
-//  - Name
-//  - Type
-//  - DefaultValue
-//  - Nullable
-//  - Comment
+//   - Name
+//   - Type
+//   - DefaultValue
+//   - Nullable
+//   - Comment
 type ColumnDef struct {
 	Name         []byte         `thrift:"name,1,required" db:"name" json:"name"`
 	Type         *ColumnTypeDef `thrift:"type,2,required" db:"type" json:"type"`
@@ -1765,9 +1765,9 @@ func (p *ColumnDef) String() string {
 }
 
 // Attributes:
-//  - TtlDuration
-//  - TtlCol
-//  - Comment
+//   - TtlDuration
+//   - TtlCol
+//   - Comment
 type SchemaProp struct {
 	TtlDuration *int64 `thrift:"ttl_duration,1" db:"ttl_duration" json:"ttl_duration,omitempty"`
 	TtlCol      []byte `thrift:"ttl_col,2" db:"ttl_col" json:"ttl_col,omitempty"`
@@ -1962,8 +1962,8 @@ func (p *SchemaProp) String() string {
 }
 
 // Attributes:
-//  - Columns
-//  - SchemaProp
+//   - Columns
+//   - SchemaProp
 type Schema struct {
 	Columns    []*ColumnDef `thrift:"columns,1" db:"columns" json:"columns"`
 	SchemaProp *SchemaProp  `thrift:"schema_prop,2" db:"schema_prop" json:"schema_prop"`
@@ -2125,8 +2125,8 @@ func (p *Schema) String() string {
 }
 
 // Attributes:
-//  - Id
-//  - Name
+//   - Id
+//   - Name
 type IdName struct {
 	Id   *ID    `thrift:"id,1" db:"id" json:"id"`
 	Name []byte `thrift:"name,2" db:"name" json:"name"`
@@ -2267,15 +2267,15 @@ func (p *IdName) String() string {
 }
 
 // Attributes:
-//  - SpaceName
-//  - PartitionNum
-//  - ReplicaFactor
-//  - CharsetName
-//  - CollateName
-//  - VidType
-//  - GroupName
-//  - IsolationLevel
-//  - Comment
+//   - SpaceName
+//   - PartitionNum
+//   - ReplicaFactor
+//   - CharsetName
+//   - CollateName
+//   - VidType
+//   - GroupName
+//   - IsolationLevel
+//   - Comment
 type SpaceDesc struct {
 	SpaceName      []byte          `thrift:"space_name,1" db:"space_name" json:"space_name"`
 	PartitionNum   int32           `thrift:"partition_num,2" db:"partition_num" json:"partition_num"`
@@ -2699,8 +2699,8 @@ func (p *SpaceDesc) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Properties
+//   - SpaceID
+//   - Properties
 type SpaceItem struct {
 	SpaceID    nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Properties *SpaceDesc           `thrift:"properties,2" db:"properties" json:"properties"`
@@ -2844,10 +2844,10 @@ func (p *SpaceItem) String() string {
 }
 
 // Attributes:
-//  - TagID
-//  - TagName
-//  - Version
-//  - Schema
+//   - TagID
+//   - TagName
+//   - Version
+//   - Schema
 type TagItem struct {
 	TagID   nebula0.TagID `thrift:"tag_id,1" db:"tag_id" json:"tag_id"`
 	TagName []byte        `thrift:"tag_name,2" db:"tag_name" json:"tag_name"`
@@ -3062,8 +3062,8 @@ func (p *TagItem) String() string {
 }
 
 // Attributes:
-//  - Op
-//  - Schema
+//   - Op
+//   - Schema
 type AlterSchemaItem struct {
 	Op     AlterSchemaOp `thrift:"op,1" db:"op" json:"op"`
 	Schema *Schema       `thrift:"schema,2" db:"schema" json:"schema"`
@@ -3207,10 +3207,10 @@ func (p *AlterSchemaItem) String() string {
 }
 
 // Attributes:
-//  - EdgeType
-//  - EdgeName
-//  - Version
-//  - Schema
+//   - EdgeType
+//   - EdgeName
+//   - Version
+//   - Schema
 type EdgeItem struct {
 	EdgeType nebula0.EdgeType `thrift:"edge_type,1" db:"edge_type" json:"edge_type"`
 	EdgeName []byte           `thrift:"edge_name,2" db:"edge_name" json:"edge_name"`
@@ -3425,8 +3425,8 @@ func (p *EdgeItem) String() string {
 }
 
 // Attributes:
-//  - TagID
-//  - EdgeType
+//   - TagID
+//   - EdgeType
 type SchemaID struct {
 	TagID    *nebula0.TagID    `thrift:"tag_id,1" db:"tag_id" json:"tag_id,omitempty"`
 	EdgeType *nebula0.EdgeType `thrift:"edge_type,2" db:"edge_type" json:"edge_type,omitempty"`
@@ -3603,12 +3603,12 @@ func (p *SchemaID) String() string {
 }
 
 // Attributes:
-//  - IndexID
-//  - IndexName
-//  - SchemaID
-//  - SchemaName
-//  - Fields
-//  - Comment
+//   - IndexID
+//   - IndexName
+//   - SchemaID
+//   - SchemaName
+//   - Fields
+//   - Comment
 type IndexItem struct {
 	IndexID    nebula0.IndexID `thrift:"index_id,1" db:"index_id" json:"index_id"`
 	IndexName  []byte          `thrift:"index_name,2" db:"index_name" json:"index_name"`
@@ -3917,14 +3917,14 @@ func (p *IndexItem) String() string {
 }
 
 // Attributes:
-//  - HostAddr
-//  - Status
-//  - LeaderParts
-//  - AllParts
-//  - Role
-//  - GitInfoSha
-//  - ZoneName
-//  - Version
+//   - HostAddr
+//   - Status
+//   - LeaderParts
+//   - AllParts
+//   - Role
+//   - GitInfoSha
+//   - ZoneName
+//   - Version
 type HostItem struct {
 	HostAddr    *nebula0.HostAddr                `thrift:"hostAddr,1" db:"hostAddr" json:"hostAddr"`
 	Status      HostStatus                       `thrift:"status,2" db:"status" json:"status"`
@@ -4397,12 +4397,12 @@ func (p *HostItem) String() string {
 }
 
 // Attributes:
-//  - Account
-//  - IsLock
-//  - MaxQueriesPerHour
-//  - MaxUpdatesPerHour
-//  - MaxConnectionsPerHour
-//  - MaxUserConnections
+//   - Account
+//   - IsLock
+//   - MaxQueriesPerHour
+//   - MaxUpdatesPerHour
+//   - MaxConnectionsPerHour
+//   - MaxUserConnections
 type UserItem struct {
 	Account               []byte `thrift:"account,1" db:"account" json:"account"`
 	IsLock                bool   `thrift:"is_lock,2" db:"is_lock" json:"is_lock"`
@@ -4670,9 +4670,9 @@ func (p *UserItem) String() string {
 }
 
 // Attributes:
-//  - UserID
-//  - SpaceID
-//  - RoleType
+//   - UserID
+//   - SpaceID
+//   - RoleType
 type RoleItem struct {
 	UserID   []byte               `thrift:"user_id,1" db:"user_id" json:"user_id"`
 	SpaceID  nebula0.GraphSpaceID `thrift:"space_id,2" db:"space_id" json:"space_id"`
@@ -4837,9 +4837,9 @@ func (p *RoleItem) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Id
-//  - Leader
+//   - Code
+//   - Id
+//   - Leader
 type ExecResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Id     *ID               `thrift:"id,2" db:"id" json:"id"`
@@ -5031,9 +5031,9 @@ func (p *ExecResp) String() string {
 }
 
 // Attributes:
-//  - Op
-//  - Cmd
-//  - Paras
+//   - Op
+//   - Cmd
+//   - Paras
 type AdminJobReq struct {
 	Op    AdminJobOp `thrift:"op,1" db:"op" json:"op"`
 	Cmd   AdminCmd   `thrift:"cmd,2" db:"cmd" json:"cmd"`
@@ -5219,12 +5219,12 @@ func (p *AdminJobReq) String() string {
 }
 
 // Attributes:
-//  - Id
-//  - Cmd
-//  - Paras
-//  - Status
-//  - StartTime
-//  - StopTime
+//   - Id
+//   - Cmd
+//   - Paras
+//   - Status
+//   - StartTime
+//   - StopTime
 type JobDesc struct {
 	Id        int32     `thrift:"id,1" db:"id" json:"id"`
 	Cmd       AdminCmd  `thrift:"cmd,2" db:"cmd" json:"cmd"`
@@ -5515,12 +5515,12 @@ func (p *JobDesc) String() string {
 }
 
 // Attributes:
-//  - TaskID
-//  - Host
-//  - Status
-//  - StartTime
-//  - StopTime
-//  - JobID
+//   - TaskID
+//   - Host
+//   - Status
+//   - StartTime
+//   - StopTime
+//   - JobID
 type TaskDesc struct {
 	TaskID    int32             `thrift:"task_id,1" db:"task_id" json:"task_id"`
 	Host      *nebula0.HostAddr `thrift:"host,2" db:"host" json:"host"`
@@ -5804,10 +5804,10 @@ func (p *TaskDesc) String() string {
 }
 
 // Attributes:
-//  - JobID
-//  - JobDesc
-//  - TaskDesc
-//  - RecoveredJobNum
+//   - JobID
+//   - JobDesc
+//   - TaskDesc
+//   - RecoveredJobNum
 type AdminJobResult_ struct {
 	JobID           *int32      `thrift:"job_id,1" db:"job_id" json:"job_id,omitempty"`
 	JobDesc         []*JobDesc  `thrift:"job_desc,2" db:"job_desc" json:"job_desc,omitempty"`
@@ -6091,9 +6091,9 @@ func (p *AdminJobResult_) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Result_
+//   - Code
+//   - Leader
+//   - Result_
 type AdminJobResp struct {
 	Code    nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader  *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -6286,8 +6286,8 @@ func (p *AdminJobResp) String() string {
 }
 
 // Attributes:
-//  - PartID
-//  - Proportion
+//   - PartID
+//   - Proportion
 type Correlativity struct {
 	PartID     nebula0.PartitionID `thrift:"part_id,1" db:"part_id" json:"part_id"`
 	Proportion float64             `thrift:"proportion,2" db:"proportion" json:"proportion"`
@@ -6416,13 +6416,13 @@ func (p *Correlativity) String() string {
 }
 
 // Attributes:
-//  - TagVertices
-//  - Edges
-//  - SpaceVertices
-//  - SpaceEdges
-//  - PositivePartCorrelativity
-//  - NegativePartCorrelativity
-//  - Status
+//   - TagVertices
+//   - Edges
+//   - SpaceVertices
+//   - SpaceEdges
+//   - PositivePartCorrelativity
+//   - NegativePartCorrelativity
+//   - Status
 type StatisItem struct {
 	TagVertices               map[string]int64                         `thrift:"tag_vertices,1" db:"tag_vertices" json:"tag_vertices"`
 	Edges                     map[string]int64                         `thrift:"edges,2" db:"edges" json:"edges"`
@@ -6884,8 +6884,8 @@ func (p *StatisItem) String() string {
 }
 
 // Attributes:
-//  - Properties
-//  - IfNotExists
+//   - Properties
+//   - IfNotExists
 type CreateSpaceReq struct {
 	Properties  *SpaceDesc `thrift:"properties,1" db:"properties" json:"properties"`
 	IfNotExists bool       `thrift:"if_not_exists,2" db:"if_not_exists" json:"if_not_exists"`
@@ -7028,8 +7028,8 @@ func (p *CreateSpaceReq) String() string {
 }
 
 // Attributes:
-//  - SpaceName
-//  - IfExists
+//   - SpaceName
+//   - IfExists
 type DropSpaceReq struct {
 	SpaceName []byte `thrift:"space_name,1" db:"space_name" json:"space_name"`
 	IfExists  bool   `thrift:"if_exists,2" db:"if_exists" json:"if_exists"`
@@ -7211,9 +7211,9 @@ func (p *ListSpacesReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Spaces
+//   - Code
+//   - Leader
+//   - Spaces
 type ListSpacesResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -7411,7 +7411,7 @@ func (p *ListSpacesResp) String() string {
 }
 
 // Attributes:
-//  - SpaceName
+//   - SpaceName
 type GetSpaceReq struct {
 	SpaceName []byte `thrift:"space_name,1" db:"space_name" json:"space_name"`
 }
@@ -7504,9 +7504,9 @@ func (p *GetSpaceReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Item
+//   - Code
+//   - Leader
+//   - Item
 type GetSpaceResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -7699,10 +7699,10 @@ func (p *GetSpaceResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - TagName
-//  - Schema
-//  - IfNotExists
+//   - SpaceID
+//   - TagName
+//   - Schema
+//   - IfNotExists
 type CreateTagReq struct {
 	SpaceID     nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	TagName     []byte               `thrift:"tag_name,2" db:"tag_name" json:"tag_name"`
@@ -7916,10 +7916,10 @@ func (p *CreateTagReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - TagName
-//  - TagItems
-//  - SchemaProp
+//   - SpaceID
+//   - TagName
+//   - TagItems
+//   - SchemaProp
 type AlterTagReq struct {
 	SpaceID    nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	TagName    []byte               `thrift:"tag_name,2" db:"tag_name" json:"tag_name"`
@@ -8152,9 +8152,9 @@ func (p *AlterTagReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - TagName
-//  - IfExists
+//   - SpaceID
+//   - TagName
+//   - IfExists
 type DropTagReq struct {
 	SpaceID  nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	TagName  []byte               `thrift:"tag_name,2" db:"tag_name" json:"tag_name"`
@@ -8318,7 +8318,7 @@ func (p *DropTagReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
+//   - SpaceID
 type ListTagsReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 }
@@ -8412,9 +8412,9 @@ func (p *ListTagsReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Tags
+//   - Code
+//   - Leader
+//   - Tags
 type ListTagsResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -8612,9 +8612,9 @@ func (p *ListTagsResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - TagName
-//  - Version
+//   - SpaceID
+//   - TagName
+//   - Version
 type GetTagReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	TagName []byte               `thrift:"tag_name,2" db:"tag_name" json:"tag_name"`
@@ -8779,9 +8779,9 @@ func (p *GetTagReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Schema
+//   - Code
+//   - Leader
+//   - Schema
 type GetTagResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -8974,10 +8974,10 @@ func (p *GetTagResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - EdgeName
-//  - Schema
-//  - IfNotExists
+//   - SpaceID
+//   - EdgeName
+//   - Schema
+//   - IfNotExists
 type CreateEdgeReq struct {
 	SpaceID     nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	EdgeName    []byte               `thrift:"edge_name,2" db:"edge_name" json:"edge_name"`
@@ -9191,10 +9191,10 @@ func (p *CreateEdgeReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - EdgeName
-//  - EdgeItems
-//  - SchemaProp
+//   - SpaceID
+//   - EdgeName
+//   - EdgeItems
+//   - SchemaProp
 type AlterEdgeReq struct {
 	SpaceID    nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	EdgeName   []byte               `thrift:"edge_name,2" db:"edge_name" json:"edge_name"`
@@ -9427,9 +9427,9 @@ func (p *AlterEdgeReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - EdgeName
-//  - Version
+//   - SpaceID
+//   - EdgeName
+//   - Version
 type GetEdgeReq struct {
 	SpaceID  nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	EdgeName []byte               `thrift:"edge_name,2" db:"edge_name" json:"edge_name"`
@@ -9594,9 +9594,9 @@ func (p *GetEdgeReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Schema
+//   - Code
+//   - Leader
+//   - Schema
 type GetEdgeResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -9789,9 +9789,9 @@ func (p *GetEdgeResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - EdgeName
-//  - IfExists
+//   - SpaceID
+//   - EdgeName
+//   - IfExists
 type DropEdgeReq struct {
 	SpaceID  nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	EdgeName []byte               `thrift:"edge_name,2" db:"edge_name" json:"edge_name"`
@@ -9955,7 +9955,7 @@ func (p *DropEdgeReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
+//   - SpaceID
 type ListEdgesReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 }
@@ -10049,9 +10049,9 @@ func (p *ListEdgesReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Edges
+//   - Code
+//   - Leader
+//   - Edges
 type ListEdgesResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -10249,7 +10249,7 @@ func (p *ListEdgesResp) String() string {
 }
 
 // Attributes:
-//  - Type
+//   - Type
 type ListHostsReq struct {
 	Type ListHostType `thrift:"type,1" db:"type" json:"type"`
 }
@@ -10343,9 +10343,9 @@ func (p *ListHostsReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Hosts
+//   - Code
+//   - Leader
+//   - Hosts
 type ListHostsResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -10543,10 +10543,10 @@ func (p *ListHostsResp) String() string {
 }
 
 // Attributes:
-//  - PartID
-//  - Leader
-//  - Peers
-//  - Losts
+//   - PartID
+//   - Leader
+//   - Peers
+//   - Losts
 type PartItem struct {
 	PartID nebula0.PartitionID `thrift:"part_id,1,required" db:"part_id" json:"part_id"`
 	Leader *nebula0.HostAddr   `thrift:"leader,2" db:"leader" json:"leader,omitempty"`
@@ -10814,8 +10814,8 @@ func (p *PartItem) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - PartIds
+//   - SpaceID
+//   - PartIds
 type ListPartsReq struct {
 	SpaceID nebula0.GraphSpaceID  `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	PartIds []nebula0.PartitionID `thrift:"part_ids,2" db:"part_ids" json:"part_ids"`
@@ -10966,9 +10966,9 @@ func (p *ListPartsReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Parts
+//   - Code
+//   - Leader
+//   - Parts
 type ListPartsResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -11166,7 +11166,7 @@ func (p *ListPartsResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
+//   - SpaceID
 type GetPartsAllocReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 }
@@ -11260,10 +11260,10 @@ func (p *GetPartsAllocReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Parts
-//  - Terms
+//   - Code
+//   - Leader
+//   - Parts
+//   - Terms
 type GetPartsAllocResp struct {
 	Code   nebula0.ErrorCode                           `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr                           `thrift:"leader,2" db:"leader" json:"leader"`
@@ -11565,8 +11565,8 @@ func (p *GetPartsAllocResp) String() string {
 }
 
 // Attributes:
-//  - Segment
-//  - Pairs
+//   - Segment
+//   - Pairs
 type MultiPutReq struct {
 	Segment []byte              `thrift:"segment,1" db:"segment" json:"segment"`
 	Pairs   []*nebula0.KeyValue `thrift:"pairs,2" db:"pairs" json:"pairs"`
@@ -11713,8 +11713,8 @@ func (p *MultiPutReq) String() string {
 }
 
 // Attributes:
-//  - Segment
-//  - Key
+//   - Segment
+//   - Key
 type GetReq struct {
 	Segment []byte `thrift:"segment,1" db:"segment" json:"segment"`
 	Key     []byte `thrift:"key,2" db:"key" json:"key"`
@@ -11842,9 +11842,9 @@ func (p *GetReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Value
+//   - Code
+//   - Leader
+//   - Value
 type GetResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -12023,8 +12023,8 @@ func (p *GetResp) String() string {
 }
 
 // Attributes:
-//  - Segment
-//  - Keys
+//   - Segment
+//   - Keys
 type MultiGetReq struct {
 	Segment []byte   `thrift:"segment,1" db:"segment" json:"segment"`
 	Keys    [][]byte `thrift:"keys,2" db:"keys" json:"keys"`
@@ -12173,9 +12173,9 @@ func (p *MultiGetReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Values
+//   - Code
+//   - Leader
+//   - Values
 type MultiGetResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -12375,8 +12375,8 @@ func (p *MultiGetResp) String() string {
 }
 
 // Attributes:
-//  - Segment
-//  - Key
+//   - Segment
+//   - Key
 type RemoveReq struct {
 	Segment []byte `thrift:"segment,1" db:"segment" json:"segment"`
 	Key     []byte `thrift:"key,2" db:"key" json:"key"`
@@ -12504,9 +12504,9 @@ func (p *RemoveReq) String() string {
 }
 
 // Attributes:
-//  - Segment
-//  - Start
-//  - End
+//   - Segment
+//   - Start
+//   - End
 type RemoveRangeReq struct {
 	Segment []byte `thrift:"segment,1" db:"segment" json:"segment"`
 	Start   []byte `thrift:"start,2" db:"start" json:"start"`
@@ -12669,9 +12669,9 @@ func (p *RemoveRangeReq) String() string {
 }
 
 // Attributes:
-//  - Segment
-//  - Start
-//  - End
+//   - Segment
+//   - Start
+//   - End
 type ScanReq struct {
 	Segment []byte `thrift:"segment,1" db:"segment" json:"segment"`
 	Start   []byte `thrift:"start,2" db:"start" json:"start"`
@@ -12834,9 +12834,9 @@ func (p *ScanReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Values
+//   - Code
+//   - Leader
+//   - Values
 type ScanResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -13036,10 +13036,10 @@ func (p *ScanResp) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - ClusterID
-//  - LastUpdateTimeInMs
+//   - Code
+//   - Leader
+//   - ClusterID
+//   - LastUpdateTimeInMs
 type HBResp struct {
 	Code               nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader             *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -13254,8 +13254,8 @@ func (p *HBResp) String() string {
 }
 
 // Attributes:
-//  - PartID
-//  - Term
+//   - PartID
+//   - Term
 type LeaderInfo struct {
 	PartID nebula0.PartitionID `thrift:"part_id,1" db:"part_id" json:"part_id"`
 	Term   int64               `thrift:"term,2" db:"term" json:"term"`
@@ -13384,12 +13384,12 @@ func (p *LeaderInfo) String() string {
 }
 
 // Attributes:
-//  - Role
-//  - Host
-//  - ClusterID
-//  - LeaderPartIds
-//  - GitInfoSha
-//  - Version
+//   - Role
+//   - Host
+//   - ClusterID
+//   - LeaderPartIds
+//   - GitInfoSha
+//   - Version
 type HBReq struct {
 	Role          HostRole                               `thrift:"role,1" db:"role" json:"role"`
 	Host          *nebula0.HostAddr                      `thrift:"host,2" db:"host" json:"host"`
@@ -13739,8 +13739,8 @@ func (p *HBReq) String() string {
 }
 
 // Attributes:
-//  - Name
-//  - TypeLength
+//   - Name
+//   - TypeLength
 type IndexFieldDef struct {
 	Name       []byte `thrift:"name,1,required" db:"name" json:"name"`
 	TypeLength *int16 `thrift:"type_length,2" db:"type_length" json:"type_length,omitempty"`
@@ -13890,12 +13890,12 @@ func (p *IndexFieldDef) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - IndexName
-//  - TagName
-//  - Fields
-//  - IfNotExists
-//  - Comment
+//   - SpaceID
+//   - IndexName
+//   - TagName
+//   - Fields
+//   - IfNotExists
+//   - Comment
 type CreateTagIndexReq struct {
 	SpaceID     nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	IndexName   []byte               `thrift:"index_name,2" db:"index_name" json:"index_name"`
@@ -14191,9 +14191,9 @@ func (p *CreateTagIndexReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - IndexName
-//  - IfExists
+//   - SpaceID
+//   - IndexName
+//   - IfExists
 type DropTagIndexReq struct {
 	SpaceID   nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	IndexName []byte               `thrift:"index_name,2" db:"index_name" json:"index_name"`
@@ -14357,8 +14357,8 @@ func (p *DropTagIndexReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - IndexName
+//   - SpaceID
+//   - IndexName
 type GetTagIndexReq struct {
 	SpaceID   nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	IndexName []byte               `thrift:"index_name,2" db:"index_name" json:"index_name"`
@@ -14487,9 +14487,9 @@ func (p *GetTagIndexReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Item
+//   - Code
+//   - Leader
+//   - Item
 type GetTagIndexResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -14682,7 +14682,7 @@ func (p *GetTagIndexResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
+//   - SpaceID
 type ListTagIndexesReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 }
@@ -14776,9 +14776,9 @@ func (p *ListTagIndexesReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Items
+//   - Code
+//   - Leader
+//   - Items
 type ListTagIndexesResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -14976,12 +14976,12 @@ func (p *ListTagIndexesResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - IndexName
-//  - EdgeName
-//  - Fields
-//  - IfNotExists
-//  - Comment
+//   - SpaceID
+//   - IndexName
+//   - EdgeName
+//   - Fields
+//   - IfNotExists
+//   - Comment
 type CreateEdgeIndexReq struct {
 	SpaceID     nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	IndexName   []byte               `thrift:"index_name,2" db:"index_name" json:"index_name"`
@@ -15277,9 +15277,9 @@ func (p *CreateEdgeIndexReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - IndexName
-//  - IfExists
+//   - SpaceID
+//   - IndexName
+//   - IfExists
 type DropEdgeIndexReq struct {
 	SpaceID   nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	IndexName []byte               `thrift:"index_name,2" db:"index_name" json:"index_name"`
@@ -15443,8 +15443,8 @@ func (p *DropEdgeIndexReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - IndexName
+//   - SpaceID
+//   - IndexName
 type GetEdgeIndexReq struct {
 	SpaceID   nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	IndexName []byte               `thrift:"index_name,2" db:"index_name" json:"index_name"`
@@ -15573,9 +15573,9 @@ func (p *GetEdgeIndexReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Item
+//   - Code
+//   - Leader
+//   - Item
 type GetEdgeIndexResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -15768,7 +15768,7 @@ func (p *GetEdgeIndexResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
+//   - SpaceID
 type ListEdgeIndexesReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 }
@@ -15862,9 +15862,9 @@ func (p *ListEdgeIndexesReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Items
+//   - Code
+//   - Leader
+//   - Items
 type ListEdgeIndexesResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -16062,8 +16062,8 @@ func (p *ListEdgeIndexesResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - IndexName
+//   - SpaceID
+//   - IndexName
 type RebuildIndexReq struct {
 	SpaceID   nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	IndexName []byte               `thrift:"index_name,2" db:"index_name" json:"index_name"`
@@ -16192,9 +16192,9 @@ func (p *RebuildIndexReq) String() string {
 }
 
 // Attributes:
-//  - Account
-//  - EncodedPwd
-//  - IfNotExists
+//   - Account
+//   - EncodedPwd
+//   - IfNotExists
 type CreateUserReq struct {
 	Account     []byte `thrift:"account,1" db:"account" json:"account"`
 	EncodedPwd  []byte `thrift:"encoded_pwd,2" db:"encoded_pwd" json:"encoded_pwd"`
@@ -16357,8 +16357,8 @@ func (p *CreateUserReq) String() string {
 }
 
 // Attributes:
-//  - Account
-//  - IfExists
+//   - Account
+//   - IfExists
 type DropUserReq struct {
 	Account  []byte `thrift:"account,1" db:"account" json:"account"`
 	IfExists bool   `thrift:"if_exists,2" db:"if_exists" json:"if_exists"`
@@ -16486,8 +16486,8 @@ func (p *DropUserReq) String() string {
 }
 
 // Attributes:
-//  - Account
-//  - EncodedPwd
+//   - Account
+//   - EncodedPwd
 type AlterUserReq struct {
 	Account    []byte `thrift:"account,1" db:"account" json:"account"`
 	EncodedPwd []byte `thrift:"encoded_pwd,2" db:"encoded_pwd" json:"encoded_pwd"`
@@ -16615,7 +16615,7 @@ func (p *AlterUserReq) String() string {
 }
 
 // Attributes:
-//  - RoleItem
+//   - RoleItem
 type GrantRoleReq struct {
 	RoleItem *RoleItem `thrift:"role_item,1" db:"role_item" json:"role_item"`
 }
@@ -16723,7 +16723,7 @@ func (p *GrantRoleReq) String() string {
 }
 
 // Attributes:
-//  - RoleItem
+//   - RoleItem
 type RevokeRoleReq struct {
 	RoleItem *RoleItem `thrift:"role_item,1" db:"role_item" json:"role_item"`
 }
@@ -16885,9 +16885,9 @@ func (p *ListUsersReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Users
+//   - Code
+//   - Leader
+//   - Users
 type ListUsersResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -17096,7 +17096,7 @@ func (p *ListUsersResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
+//   - SpaceID
 type ListRolesReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 }
@@ -17190,9 +17190,9 @@ func (p *ListRolesReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Roles
+//   - Code
+//   - Leader
+//   - Roles
 type ListRolesResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -17390,7 +17390,7 @@ func (p *ListRolesResp) String() string {
 }
 
 // Attributes:
-//  - Account
+//   - Account
 type GetUserRolesReq struct {
 	Account []byte `thrift:"account,1" db:"account" json:"account"`
 }
@@ -17483,9 +17483,9 @@ func (p *GetUserRolesReq) String() string {
 }
 
 // Attributes:
-//  - Account
-//  - NewEncodedPwd_
-//  - OldEncodedPwd
+//   - Account
+//   - NewEncodedPwd_
+//   - OldEncodedPwd
 type ChangePasswordReq struct {
 	Account        []byte `thrift:"account,1" db:"account" json:"account"`
 	NewEncodedPwd_ []byte `thrift:"new_encoded_pwd,2" db:"new_encoded_pwd" json:"new_encoded_pwd"`
@@ -17648,11 +17648,11 @@ func (p *ChangePasswordReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Id
-//  - HostDel
-//  - Stop
-//  - Reset
+//   - SpaceID
+//   - Id
+//   - HostDel
+//   - Stop
+//   - Reset
 type BalanceReq struct {
 	SpaceID *nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id,omitempty"`
 	Id      *int64                `thrift:"id,2" db:"id" json:"id,omitempty"`
@@ -17977,8 +17977,8 @@ func (p *BalanceReq) String() string {
 }
 
 // Attributes:
-//  - Id
-//  - Result_
+//   - Id
+//   - Result_
 type BalanceTask struct {
 	Id      []byte      `thrift:"id,1" db:"id" json:"id"`
 	Result_ TaskResult_ `thrift:"result,2" db:"result" json:"result"`
@@ -18107,10 +18107,10 @@ func (p *BalanceTask) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Id
-//  - Leader
-//  - Tasks
+//   - Code
+//   - Id
+//   - Leader
+//   - Tasks
 type BalanceResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Id     int64             `thrift:"id,2" db:"id" json:"id"`
@@ -18397,10 +18397,10 @@ func (p *LeaderBalanceReq) String() string {
 }
 
 // Attributes:
-//  - Module
-//  - Name
-//  - Mode
-//  - Value
+//   - Module
+//   - Name
+//   - Mode
+//   - Value
 type ConfigItem struct {
 	Module ConfigModule   `thrift:"module,1" db:"module" json:"module"`
 	Name   []byte         `thrift:"name,2" db:"name" json:"name"`
@@ -18613,7 +18613,7 @@ func (p *ConfigItem) String() string {
 }
 
 // Attributes:
-//  - Items
+//   - Items
 type RegConfigReq struct {
 	Items []*ConfigItem `thrift:"items,1" db:"items" json:"items"`
 }
@@ -18725,7 +18725,7 @@ func (p *RegConfigReq) String() string {
 }
 
 // Attributes:
-//  - Item
+//   - Item
 type GetConfigReq struct {
 	Item *ConfigItem `thrift:"item,1" db:"item" json:"item"`
 }
@@ -18833,9 +18833,9 @@ func (p *GetConfigReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Items
+//   - Code
+//   - Leader
+//   - Items
 type GetConfigResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -19033,7 +19033,7 @@ func (p *GetConfigResp) String() string {
 }
 
 // Attributes:
-//  - Item
+//   - Item
 type SetConfigReq struct {
 	Item *ConfigItem `thrift:"item,1" db:"item" json:"item"`
 }
@@ -19141,8 +19141,8 @@ func (p *SetConfigReq) String() string {
 }
 
 // Attributes:
-//  - Space
-//  - Module
+//   - Space
+//   - Module
 type ListConfigsReq struct {
 	Space  []byte       `thrift:"space,1" db:"space" json:"space"`
 	Module ConfigModule `thrift:"module,2" db:"module" json:"module"`
@@ -19271,9 +19271,9 @@ func (p *ListConfigsReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Items
+//   - Code
+//   - Leader
+//   - Items
 type ListConfigsResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -19525,7 +19525,7 @@ func (p *CreateSnapshotReq) String() string {
 }
 
 // Attributes:
-//  - Name
+//   - Name
 type DropSnapshotReq struct {
 	Name []byte `thrift:"name,1" db:"name" json:"name"`
 }
@@ -19672,9 +19672,9 @@ func (p *ListSnapshotsReq) String() string {
 }
 
 // Attributes:
-//  - Name
-//  - Status
-//  - Hosts
+//   - Name
+//   - Status
+//   - Hosts
 type Snapshot struct {
 	Name   []byte         `thrift:"name,1" db:"name" json:"name"`
 	Status SnapshotStatus `thrift:"status,2" db:"status" json:"status"`
@@ -19838,9 +19838,9 @@ func (p *Snapshot) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Snapshots
+//   - Code
+//   - Leader
+//   - Snapshots
 type ListSnapshotsResp struct {
 	Code      nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader    *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -20038,7 +20038,7 @@ func (p *ListSnapshotsResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
+//   - SpaceID
 type ListIndexStatusReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 }
@@ -20132,8 +20132,8 @@ func (p *ListIndexStatusReq) String() string {
 }
 
 // Attributes:
-//  - Name
-//  - Status
+//   - Name
+//   - Status
 type IndexStatus struct {
 	Name   []byte `thrift:"name,1" db:"name" json:"name"`
 	Status []byte `thrift:"status,2" db:"status" json:"status"`
@@ -20261,9 +20261,9 @@ func (p *IndexStatus) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Statuses
+//   - Code
+//   - Leader
+//   - Statuses
 type ListIndexStatusResp struct {
 	Code     nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader   *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -20461,8 +20461,8 @@ func (p *ListIndexStatusResp) String() string {
 }
 
 // Attributes:
-//  - ZoneName
-//  - Nodes
+//   - ZoneName
+//   - Nodes
 type AddZoneReq struct {
 	ZoneName []byte              `thrift:"zone_name,1" db:"zone_name" json:"zone_name"`
 	Nodes    []*nebula0.HostAddr `thrift:"nodes,2" db:"nodes" json:"nodes"`
@@ -20609,7 +20609,7 @@ func (p *AddZoneReq) String() string {
 }
 
 // Attributes:
-//  - ZoneName
+//   - ZoneName
 type DropZoneReq struct {
 	ZoneName []byte `thrift:"zone_name,1" db:"zone_name" json:"zone_name"`
 }
@@ -20702,8 +20702,8 @@ func (p *DropZoneReq) String() string {
 }
 
 // Attributes:
-//  - Node
-//  - ZoneName
+//   - Node
+//   - ZoneName
 type AddHostIntoZoneReq struct {
 	Node     *nebula0.HostAddr `thrift:"node,1" db:"node" json:"node"`
 	ZoneName []byte            `thrift:"zone_name,2" db:"zone_name" json:"zone_name"`
@@ -20846,8 +20846,8 @@ func (p *AddHostIntoZoneReq) String() string {
 }
 
 // Attributes:
-//  - Node
-//  - ZoneName
+//   - Node
+//   - ZoneName
 type DropHostFromZoneReq struct {
 	Node     *nebula0.HostAddr `thrift:"node,1" db:"node" json:"node"`
 	ZoneName []byte            `thrift:"zone_name,2" db:"zone_name" json:"zone_name"`
@@ -20990,7 +20990,7 @@ func (p *DropHostFromZoneReq) String() string {
 }
 
 // Attributes:
-//  - ZoneName
+//   - ZoneName
 type GetZoneReq struct {
 	ZoneName []byte `thrift:"zone_name,1" db:"zone_name" json:"zone_name"`
 }
@@ -21083,9 +21083,9 @@ func (p *GetZoneReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Hosts
+//   - Code
+//   - Leader
+//   - Hosts
 type GetZoneResp struct {
 	Code   nebula0.ErrorCode   `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr   `thrift:"leader,2" db:"leader" json:"leader"`
@@ -21337,8 +21337,8 @@ func (p *ListZonesReq) String() string {
 }
 
 // Attributes:
-//  - ZoneName
-//  - Nodes
+//   - ZoneName
+//   - Nodes
 type Zone struct {
 	ZoneName []byte              `thrift:"zone_name,1" db:"zone_name" json:"zone_name"`
 	Nodes    []*nebula0.HostAddr `thrift:"nodes,2" db:"nodes" json:"nodes"`
@@ -21485,9 +21485,9 @@ func (p *Zone) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Zones
+//   - Code
+//   - Leader
+//   - Zones
 type ListZonesResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -21685,8 +21685,8 @@ func (p *ListZonesResp) String() string {
 }
 
 // Attributes:
-//  - GroupName
-//  - ZoneNames
+//   - GroupName
+//   - ZoneNames
 type AddGroupReq struct {
 	GroupName []byte   `thrift:"group_name,1" db:"group_name" json:"group_name"`
 	ZoneNames [][]byte `thrift:"zone_names,2" db:"zone_names" json:"zone_names"`
@@ -21835,7 +21835,7 @@ func (p *AddGroupReq) String() string {
 }
 
 // Attributes:
-//  - GroupName
+//   - GroupName
 type DropGroupReq struct {
 	GroupName []byte `thrift:"group_name,1" db:"group_name" json:"group_name"`
 }
@@ -21928,8 +21928,8 @@ func (p *DropGroupReq) String() string {
 }
 
 // Attributes:
-//  - ZoneName
-//  - GroupName
+//   - ZoneName
+//   - GroupName
 type AddZoneIntoGroupReq struct {
 	ZoneName  []byte `thrift:"zone_name,1" db:"zone_name" json:"zone_name"`
 	GroupName []byte `thrift:"group_name,2" db:"group_name" json:"group_name"`
@@ -22057,8 +22057,8 @@ func (p *AddZoneIntoGroupReq) String() string {
 }
 
 // Attributes:
-//  - ZoneName
-//  - GroupName
+//   - ZoneName
+//   - GroupName
 type DropZoneFromGroupReq struct {
 	ZoneName  []byte `thrift:"zone_name,1" db:"zone_name" json:"zone_name"`
 	GroupName []byte `thrift:"group_name,2" db:"group_name" json:"group_name"`
@@ -22186,7 +22186,7 @@ func (p *DropZoneFromGroupReq) String() string {
 }
 
 // Attributes:
-//  - GroupName
+//   - GroupName
 type GetGroupReq struct {
 	GroupName []byte `thrift:"group_name,1" db:"group_name" json:"group_name"`
 }
@@ -22279,9 +22279,9 @@ func (p *GetGroupReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - ZoneNames
+//   - Code
+//   - Leader
+//   - ZoneNames
 type GetGroupResp struct {
 	Code      nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader    *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -22535,8 +22535,8 @@ func (p *ListGroupsReq) String() string {
 }
 
 // Attributes:
-//  - GroupName
-//  - ZoneNames
+//   - GroupName
+//   - ZoneNames
 type Group struct {
 	GroupName []byte   `thrift:"group_name,1" db:"group_name" json:"group_name"`
 	ZoneNames [][]byte `thrift:"zone_names,2" db:"zone_names" json:"zone_names"`
@@ -22685,9 +22685,9 @@ func (p *Group) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Groups
+//   - Code
+//   - Leader
+//   - Groups
 type ListGroupsResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -22885,9 +22885,9 @@ func (p *ListGroupsResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Type
-//  - Hosts
+//   - SpaceID
+//   - Type
+//   - Hosts
 type AddListenerReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Type    ListenerType         `thrift:"type,2" db:"type" json:"type"`
@@ -23071,8 +23071,8 @@ func (p *AddListenerReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - Type
+//   - SpaceID
+//   - Type
 type RemoveListenerReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	Type    ListenerType         `thrift:"type,2" db:"type" json:"type"`
@@ -23202,7 +23202,7 @@ func (p *RemoveListenerReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
+//   - SpaceID
 type ListListenerReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 }
@@ -23296,10 +23296,10 @@ func (p *ListListenerReq) String() string {
 }
 
 // Attributes:
-//  - Type
-//  - Host
-//  - PartID
-//  - Status
+//   - Type
+//   - Host
+//   - PartID
+//   - Status
 type ListenerInfo struct {
 	Type   ListenerType        `thrift:"type,1" db:"type" json:"type"`
 	Host   *nebula0.HostAddr   `thrift:"host,2" db:"host" json:"host"`
@@ -23515,9 +23515,9 @@ func (p *ListenerInfo) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Listeners
+//   - Code
+//   - Leader
+//   - Listeners
 type ListListenerResp struct {
 	Code      nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader    *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -23715,7 +23715,7 @@ func (p *ListListenerResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
+//   - SpaceID
 type GetStatisReq struct {
 	SpaceID nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 }
@@ -23809,9 +23809,9 @@ func (p *GetStatisReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Statis
+//   - Code
+//   - Leader
+//   - Statis
 type GetStatisResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -24004,8 +24004,8 @@ func (p *GetStatisResp) String() string {
 }
 
 // Attributes:
-//  - Host
-//  - Info
+//   - Host
+//   - Info
 type BackupInfo struct {
 	Host *nebula0.HostAddr         `thrift:"host,1" db:"host" json:"host"`
 	Info []*nebula0.CheckpointInfo `thrift:"info,2" db:"info" json:"info"`
@@ -24167,8 +24167,8 @@ func (p *BackupInfo) String() string {
 }
 
 // Attributes:
-//  - Space
-//  - Info
+//   - Space
+//   - Info
 type SpaceBackupInfo struct {
 	Space *SpaceDesc    `thrift:"space,1" db:"space" json:"space"`
 	Info  []*BackupInfo `thrift:"info,2" db:"info" json:"info"`
@@ -24330,12 +24330,12 @@ func (p *SpaceBackupInfo) String() string {
 }
 
 // Attributes:
-//  - BackupInfo
-//  - MetaFiles
-//  - BackupName
-//  - Full
-//  - IncludeSystemSpace
-//  - CreateTime
+//   - BackupInfo
+//   - MetaFiles
+//   - BackupName
+//   - Full
+//   - IncludeSystemSpace
+//   - CreateTime
 type BackupMeta struct {
 	BackupInfo         map[nebula0.GraphSpaceID]*SpaceBackupInfo `thrift:"backup_info,1" db:"backup_info" json:"backup_info"`
 	MetaFiles          [][]byte                                  `thrift:"meta_files,2" db:"meta_files" json:"meta_files"`
@@ -24653,7 +24653,7 @@ func (p *BackupMeta) String() string {
 }
 
 // Attributes:
-//  - Spaces
+//   - Spaces
 type CreateBackupReq struct {
 	Spaces [][]byte `thrift:"spaces,1" db:"spaces" json:"spaces,omitempty"`
 }
@@ -24775,9 +24775,9 @@ func (p *CreateBackupReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Meta
+//   - Code
+//   - Leader
+//   - Meta
 type CreateBackupResp struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -24970,8 +24970,8 @@ func (p *CreateBackupResp) String() string {
 }
 
 // Attributes:
-//  - FromHost
-//  - ToHost
+//   - FromHost
+//   - ToHost
 type HostPair struct {
 	FromHost *nebula0.HostAddr `thrift:"from_host,1" db:"from_host" json:"from_host"`
 	ToHost   *nebula0.HostAddr `thrift:"to_host,2" db:"to_host" json:"to_host"`
@@ -25128,8 +25128,8 @@ func (p *HostPair) String() string {
 }
 
 // Attributes:
-//  - Files
-//  - Hosts
+//   - Files
+//   - Hosts
 type RestoreMetaReq struct {
 	Files [][]byte    `thrift:"files,1" db:"files" json:"files"`
 	Hosts []*HostPair `thrift:"hosts,2" db:"hosts" json:"hosts"`
@@ -25297,9 +25297,9 @@ func (p *RestoreMetaReq) String() string {
 }
 
 // Attributes:
-//  - Host
-//  - User
-//  - Pwd
+//   - Host
+//   - User
+//   - Pwd
 type FTClient struct {
 	Host *nebula0.HostAddr `thrift:"host,1,required" db:"host" json:"host"`
 	User []byte            `thrift:"user,2" db:"user" json:"user,omitempty"`
@@ -25499,8 +25499,8 @@ func (p *FTClient) String() string {
 }
 
 // Attributes:
-//  - Type
-//  - Clients
+//   - Type
+//   - Clients
 type SignInFTServiceReq struct {
 	Type    FTServiceType `thrift:"type,1" db:"type" json:"type"`
 	Clients []*FTClient   `thrift:"clients,2" db:"clients" json:"clients"`
@@ -25756,9 +25756,9 @@ func (p *ListFTClientsReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Clients
+//   - Code
+//   - Leader
+//   - Clients
 type ListFTClientsResp struct {
 	Code    nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader  *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -25956,9 +25956,9 @@ func (p *ListFTClientsResp) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - DependSchema
-//  - Fields
+//   - SpaceID
+//   - DependSchema
+//   - Fields
 type FTIndex struct {
 	SpaceID      nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	DependSchema *SchemaID            `thrift:"depend_schema,2" db:"depend_schema" json:"depend_schema"`
@@ -26156,8 +26156,8 @@ func (p *FTIndex) String() string {
 }
 
 // Attributes:
-//  - FulltextIndexName
-//  - Index
+//   - FulltextIndexName
+//   - Index
 type CreateFTIndexReq struct {
 	FulltextIndexName []byte   `thrift:"fulltext_index_name,1" db:"fulltext_index_name" json:"fulltext_index_name"`
 	Index             *FTIndex `thrift:"index,2" db:"index" json:"index"`
@@ -26300,8 +26300,8 @@ func (p *CreateFTIndexReq) String() string {
 }
 
 // Attributes:
-//  - SpaceID
-//  - FulltextIndexName
+//   - SpaceID
+//   - FulltextIndexName
 type DropFTIndexReq struct {
 	SpaceID           nebula0.GraphSpaceID `thrift:"space_id,1" db:"space_id" json:"space_id"`
 	FulltextIndexName []byte               `thrift:"fulltext_index_name,2" db:"fulltext_index_name" json:"fulltext_index_name"`
@@ -26484,9 +26484,9 @@ func (p *ListFTIndexesReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Indexes
+//   - Code
+//   - Leader
+//   - Indexes
 type ListFTIndexesResp struct {
 	Code    nebula0.ErrorCode   `thrift:"code,1" db:"code" json:"code"`
 	Leader  *nebula0.HostAddr   `thrift:"leader,2" db:"leader" json:"leader"`
@@ -26693,11 +26693,11 @@ func (p *ListFTIndexesResp) String() string {
 }
 
 // Attributes:
-//  - StartTime
-//  - Status
-//  - Duration
-//  - Query
-//  - GraphAddr
+//   - StartTime
+//   - Status
+//   - Duration
+//   - Query
+//   - GraphAddr
 type QueryDesc struct {
 	StartTime nebula0.Timestamp `thrift:"start_time,1" db:"start_time" json:"start_time"`
 	Status    QueryStatus       `thrift:"status,2" db:"status" json:"status"`
@@ -26947,16 +26947,16 @@ func (p *QueryDesc) String() string {
 }
 
 // Attributes:
-//  - SessionID
-//  - CreateTime
-//  - UpdateTime
-//  - UserName
-//  - SpaceName
-//  - GraphAddr
-//  - Timezone
-//  - ClientIP
-//  - Configs
-//  - Queries
+//   - SessionID
+//   - CreateTime
+//   - UpdateTime
+//   - UserName
+//   - SpaceName
+//   - GraphAddr
+//   - Timezone
+//   - ClientIP
+//   - Configs
+//   - Queries
 type Session struct {
 	SessionID  nebula0.SessionID                      `thrift:"session_id,1" db:"session_id" json:"session_id"`
 	CreateTime nebula0.Timestamp                      `thrift:"create_time,2" db:"create_time" json:"create_time"`
@@ -27439,9 +27439,9 @@ func (p *Session) String() string {
 }
 
 // Attributes:
-//  - User
-//  - GraphAddr
-//  - ClientIP
+//   - User
+//   - GraphAddr
+//   - ClientIP
 type CreateSessionReq struct {
 	User      []byte            `thrift:"user,1" db:"user" json:"user"`
 	GraphAddr *nebula0.HostAddr `thrift:"graph_addr,2" db:"graph_addr" json:"graph_addr"`
@@ -27619,9 +27619,9 @@ func (p *CreateSessionReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Session
+//   - Code
+//   - Leader
+//   - Session
 type CreateSessionResp struct {
 	Code    nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader  *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -27814,7 +27814,7 @@ func (p *CreateSessionResp) String() string {
 }
 
 // Attributes:
-//  - Sessions
+//   - Sessions
 type UpdateSessionsReq struct {
 	Sessions []*Session `thrift:"sessions,1" db:"sessions" json:"sessions"`
 }
@@ -27926,9 +27926,9 @@ func (p *UpdateSessionsReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - KilledQueries
+//   - Code
+//   - Leader
+//   - KilledQueries
 type UpdateSessionsResp struct {
 	Code          nebula0.ErrorCode                                            `thrift:"code,1" db:"code" json:"code"`
 	Leader        *nebula0.HostAddr                                            `thrift:"leader,2" db:"leader" json:"leader"`
@@ -28220,9 +28220,9 @@ func (p *ListSessionsReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Sessions
+//   - Code
+//   - Leader
+//   - Sessions
 type ListSessionsResp struct {
 	Code     nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader   *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -28420,7 +28420,7 @@ func (p *ListSessionsResp) String() string {
 }
 
 // Attributes:
-//  - SessionID
+//   - SessionID
 type GetSessionReq struct {
 	SessionID nebula0.SessionID `thrift:"session_id,1" db:"session_id" json:"session_id"`
 }
@@ -28514,9 +28514,9 @@ func (p *GetSessionReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - Session
+//   - Code
+//   - Leader
+//   - Session
 type GetSessionResp struct {
 	Code    nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Leader  *nebula0.HostAddr `thrift:"leader,2" db:"leader" json:"leader"`
@@ -28709,7 +28709,7 @@ func (p *GetSessionResp) String() string {
 }
 
 // Attributes:
-//  - SessionID
+//   - SessionID
 type RemoveSessionReq struct {
 	SessionID nebula0.SessionID `thrift:"session_id,1" db:"session_id" json:"session_id"`
 }
@@ -28803,7 +28803,7 @@ func (p *RemoveSessionReq) String() string {
 }
 
 // Attributes:
-//  - KillQueries
+//   - KillQueries
 type KillQueryReq struct {
 	KillQueries map[nebula0.SessionID][]nebula0.ExecutionPlanID `thrift:"kill_queries,1" db:"kill_queries" json:"kill_queries"`
 }
@@ -28955,10 +28955,10 @@ func (p *KillQueryReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - JobID
-//  - TaskID
-//  - Statis
+//   - Code
+//   - JobID
+//   - TaskID
+//   - Statis
 type ReportTaskReq struct {
 	Code   nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	JobID  int32             `thrift:"job_id,2" db:"job_id" json:"job_id"`
@@ -29172,10 +29172,10 @@ func (p *ReportTaskReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Leader
-//  - MetaServers
-//  - StorageServers
+//   - Code
+//   - Leader
+//   - MetaServers
+//   - StorageServers
 type ListClusterInfoResp struct {
 	Code           nebula0.ErrorCode   `thrift:"code,1" db:"code" json:"code"`
 	Leader         *nebula0.HostAddr   `thrift:"leader,2" db:"leader" json:"leader"`
@@ -29481,8 +29481,8 @@ func (p *ListClusterInfoReq) String() string {
 }
 
 // Attributes:
-//  - Code
-//  - Dir
+//   - Code
+//   - Dir
 type GetMetaDirInfoResp struct {
 	Code nebula0.ErrorCode `thrift:"code,1" db:"code" json:"code"`
 	Dir  *nebula0.DirInfo  `thrift:"dir,2" db:"dir" json:"dir"`

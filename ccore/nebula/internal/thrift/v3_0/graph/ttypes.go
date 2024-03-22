@@ -25,10 +25,10 @@ var _ = nebula0.GoUnusedProtection__
 var GoUnusedProtection__ int
 
 // Attributes:
-//  - Rows
-//  - ExecDurationInUs
-//  - TotalDurationInUs
-//  - OtherStats
+//   - Rows
+//   - ExecDurationInUs
+//   - TotalDurationInUs
+//   - OtherStats
 type ProfilingStats struct {
 	Rows              int64             `thrift:"rows,1,required" db:"rows" json:"rows"`
 	ExecDurationInUs  int64             `thrift:"exec_duration_in_us,2,required" db:"exec_duration_in_us" json:"exec_duration_in_us"`
@@ -339,8 +339,8 @@ func (p *ProfilingStats) String() string {
 }
 
 // Attributes:
-//  - IsDoBranch
-//  - ConditionNodeID
+//   - IsDoBranch
+//   - ConditionNodeID
 type PlanNodeBranchInfo struct {
 	IsDoBranch      bool  `thrift:"is_do_branch,1,required" db:"is_do_branch" json:"is_do_branch"`
 	ConditionNodeID int64 `thrift:"condition_node_id,2,required" db:"condition_node_id" json:"condition_node_id"`
@@ -517,8 +517,8 @@ func (p *PlanNodeBranchInfo) String() string {
 }
 
 // Attributes:
-//  - Key
-//  - Value
+//   - Key
+//   - Value
 type Pair struct {
 	Key   []byte `thrift:"key,1,required" db:"key" json:"key"`
 	Value []byte `thrift:"value,2,required" db:"value" json:"value"`
@@ -695,13 +695,13 @@ func (p *Pair) String() string {
 }
 
 // Attributes:
-//  - Name
-//  - Id
-//  - OutputVar
-//  - Description
-//  - Profiles
-//  - BranchInfo
-//  - Dependencies
+//   - Name
+//   - Id
+//   - OutputVar
+//   - Description
+//   - Profiles
+//   - BranchInfo
+//   - Dependencies
 type PlanNodeDescription struct {
 	Name         []byte              `thrift:"name,1,required" db:"name" json:"name"`
 	Id           int64               `thrift:"id,2,required" db:"id" json:"id"`
@@ -1210,10 +1210,10 @@ func (p *PlanNodeDescription) String() string {
 }
 
 // Attributes:
-//  - PlanNodeDescs
-//  - NodeIndexMap
-//  - Format
-//  - OptimizeTimeInUs
+//   - PlanNodeDescs
+//   - NodeIndexMap
+//   - Format
+//   - OptimizeTimeInUs
 type PlanDescription struct {
 	PlanNodeDescs    []*PlanNodeDescription `thrift:"plan_node_descs,1,required" db:"plan_node_descs" json:"plan_node_descs"`
 	NodeIndexMap     map[int64]int64        `thrift:"node_index_map,2,required" db:"node_index_map" json:"node_index_map"`
@@ -1541,13 +1541,13 @@ func (p *PlanDescription) String() string {
 }
 
 // Attributes:
-//  - ErrorCode
-//  - LatencyInUs
-//  - Data
-//  - SpaceName
-//  - ErrorMsg
-//  - PlanDesc
-//  - Comment
+//   - ErrorCode
+//   - LatencyInUs
+//   - Data
+//   - SpaceName
+//   - ErrorMsg
+//   - PlanDesc
+//   - Comment
 type ExecutionResponse struct {
 	ErrorCode   nebula0.ErrorCode `thrift:"error_code,1,required" db:"error_code" json:"error_code"`
 	LatencyInUs int64             `thrift:"latency_in_us,2,required" db:"latency_in_us" json:"latency_in_us"`
@@ -2008,11 +2008,11 @@ func (p *ExecutionResponse) String() string {
 }
 
 // Attributes:
-//  - ErrorCode
-//  - ErrorMsg
-//  - SessionID
-//  - TimeZoneOffsetSeconds
-//  - TimeZoneName
+//   - ErrorCode
+//   - ErrorMsg
+//   - SessionID
+//   - TimeZoneOffsetSeconds
+//   - TimeZoneName
 type AuthResponse struct {
 	ErrorCode             nebula0.ErrorCode `thrift:"error_code,1,required" db:"error_code" json:"error_code"`
 	ErrorMsg              []byte            `thrift:"error_msg,2,optional" db:"error_msg" json:"error_msg,omitempty"`
@@ -2370,8 +2370,8 @@ func (p *AuthResponse) String() string {
 }
 
 // Attributes:
-//  - ErrorCode
-//  - ErrorMsg
+//   - ErrorCode
+//   - ErrorMsg
 type VerifyClientVersionResp struct {
 	ErrorCode nebula0.ErrorCode `thrift:"error_code,1,required" db:"error_code" json:"error_code"`
 	ErrorMsg  []byte            `thrift:"error_msg,2,optional" db:"error_msg" json:"error_msg,omitempty"`
@@ -2551,7 +2551,7 @@ func (p *VerifyClientVersionResp) String() string {
 }
 
 // Attributes:
-//  - Version
+//   - Version
 type VerifyClientVersionReq struct {
 	Version []byte `thrift:"version,1,required" db:"version" json:"version"`
 }

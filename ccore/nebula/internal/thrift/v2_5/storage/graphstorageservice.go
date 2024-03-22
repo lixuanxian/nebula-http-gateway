@@ -145,7 +145,7 @@ func NewGraphStorageServiceClientProtocol(prot thrift.Protocol) *GraphStorageSer
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) GetNeighbors(req *GetNeighborsRequest) (_r *GetNeighborsResponse, err error) {
 	args := GraphStorageServiceGetNeighborsArgs{
 		Req: req,
@@ -168,7 +168,7 @@ func (p *GraphStorageServiceClient) recvGetNeighbors() (value *GetNeighborsRespo
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) GetProps(req *GetPropRequest) (_r *GetPropResponse, err error) {
 	args := GraphStorageServiceGetPropsArgs{
 		Req: req,
@@ -191,7 +191,7 @@ func (p *GraphStorageServiceClient) recvGetProps() (value *GetPropResponse, err 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) AddVertices(req *AddVerticesRequest) (_r *ExecResponse, err error) {
 	args := GraphStorageServiceAddVerticesArgs{
 		Req: req,
@@ -214,7 +214,7 @@ func (p *GraphStorageServiceClient) recvAddVertices() (value *ExecResponse, err 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) AddEdges(req *AddEdgesRequest) (_r *ExecResponse, err error) {
 	args := GraphStorageServiceAddEdgesArgs{
 		Req: req,
@@ -237,7 +237,7 @@ func (p *GraphStorageServiceClient) recvAddEdges() (value *ExecResponse, err err
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) DeleteEdges(req *DeleteEdgesRequest) (_r *ExecResponse, err error) {
 	args := GraphStorageServiceDeleteEdgesArgs{
 		Req: req,
@@ -260,7 +260,7 @@ func (p *GraphStorageServiceClient) recvDeleteEdges() (value *ExecResponse, err 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) DeleteVertices(req *DeleteVerticesRequest) (_r *ExecResponse, err error) {
 	args := GraphStorageServiceDeleteVerticesArgs{
 		Req: req,
@@ -283,7 +283,7 @@ func (p *GraphStorageServiceClient) recvDeleteVertices() (value *ExecResponse, e
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) UpdateVertex(req *UpdateVertexRequest) (_r *UpdateResponse, err error) {
 	args := GraphStorageServiceUpdateVertexArgs{
 		Req: req,
@@ -306,7 +306,7 @@ func (p *GraphStorageServiceClient) recvUpdateVertex() (value *UpdateResponse, e
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) UpdateEdge(req *UpdateEdgeRequest) (_r *UpdateResponse, err error) {
 	args := GraphStorageServiceUpdateEdgeArgs{
 		Req: req,
@@ -329,7 +329,7 @@ func (p *GraphStorageServiceClient) recvUpdateEdge() (value *UpdateResponse, err
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) ScanVertex(req *ScanVertexRequest) (_r *ScanVertexResponse, err error) {
 	args := GraphStorageServiceScanVertexArgs{
 		Req: req,
@@ -352,7 +352,7 @@ func (p *GraphStorageServiceClient) recvScanVertex() (value *ScanVertexResponse,
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) ScanEdge(req *ScanEdgeRequest) (_r *ScanEdgeResponse, err error) {
 	args := GraphStorageServiceScanEdgeArgs{
 		Req: req,
@@ -375,7 +375,7 @@ func (p *GraphStorageServiceClient) recvScanEdge() (value *ScanEdgeResponse, err
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) GetUUID(req *GetUUIDReq) (_r *GetUUIDResp, err error) {
 	args := GraphStorageServiceGetUUIDArgs{
 		Req: req,
@@ -398,7 +398,7 @@ func (p *GraphStorageServiceClient) recvGetUUID() (value *GetUUIDResp, err error
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) LookupIndex(req *LookupIndexRequest) (_r *LookupIndexResp, err error) {
 	args := GraphStorageServiceLookupIndexArgs{
 		Req: req,
@@ -421,7 +421,7 @@ func (p *GraphStorageServiceClient) recvLookupIndex() (value *LookupIndexResp, e
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) LookupAndTraverse(req *LookupAndTraverseRequest) (_r *GetNeighborsResponse, err error) {
 	args := GraphStorageServiceLookupAndTraverseArgs{
 		Req: req,
@@ -444,7 +444,7 @@ func (p *GraphStorageServiceClient) recvLookupAndTraverse() (value *GetNeighbors
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceClient) AddEdgesAtomic(req *AddEdgesRequest) (_r *ExecResponse, err error) {
 	args := GraphStorageServiceAddEdgesAtomicArgs{
 		Req: req,
@@ -503,7 +503,7 @@ func NewGraphStorageServiceThreadsafeClientProtocol(prot thrift.Protocol) *Graph
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) GetNeighbors(req *GetNeighborsRequest) (_r *GetNeighborsResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -528,7 +528,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvGetNeighbors() (value *GetNeig
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) GetProps(req *GetPropRequest) (_r *GetPropResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -553,7 +553,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvGetProps() (value *GetPropResp
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) AddVertices(req *AddVerticesRequest) (_r *ExecResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -578,7 +578,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvAddVertices() (value *ExecResp
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) AddEdges(req *AddEdgesRequest) (_r *ExecResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -603,7 +603,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvAddEdges() (value *ExecRespons
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) DeleteEdges(req *DeleteEdgesRequest) (_r *ExecResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -628,7 +628,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvDeleteEdges() (value *ExecResp
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) DeleteVertices(req *DeleteVerticesRequest) (_r *ExecResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -653,7 +653,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvDeleteVertices() (value *ExecR
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) UpdateVertex(req *UpdateVertexRequest) (_r *UpdateResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -678,7 +678,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvUpdateVertex() (value *UpdateR
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) UpdateEdge(req *UpdateEdgeRequest) (_r *UpdateResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -703,7 +703,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvUpdateEdge() (value *UpdateRes
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) ScanVertex(req *ScanVertexRequest) (_r *ScanVertexResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -728,7 +728,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvScanVertex() (value *ScanVerte
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) ScanEdge(req *ScanEdgeRequest) (_r *ScanEdgeResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -753,7 +753,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvScanEdge() (value *ScanEdgeRes
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) GetUUID(req *GetUUIDReq) (_r *GetUUIDResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -778,7 +778,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvGetUUID() (value *GetUUIDResp,
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) LookupIndex(req *LookupIndexRequest) (_r *LookupIndexResp, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -803,7 +803,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvLookupIndex() (value *LookupIn
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) LookupAndTraverse(req *LookupAndTraverseRequest) (_r *GetNeighborsResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -828,7 +828,7 @@ func (p *GraphStorageServiceThreadsafeClient) recvLookupAndTraverse() (value *Ge
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceThreadsafeClient) AddEdgesAtomic(req *AddEdgesRequest) (_r *ExecResponse, err error) {
 	p.Mu.Lock()
 	defer p.Mu.Unlock()
@@ -873,7 +873,7 @@ func NewGraphStorageServiceChannelClient(channel thrift.RequestChannel) *GraphSt
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) GetNeighbors(ctx context.Context, req *GetNeighborsRequest) (_r *GetNeighborsResponse, err error) {
 	args := GraphStorageServiceGetNeighborsArgs{
 		Req: req,
@@ -888,7 +888,7 @@ func (p *GraphStorageServiceChannelClient) GetNeighbors(ctx context.Context, req
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) GetProps(ctx context.Context, req *GetPropRequest) (_r *GetPropResponse, err error) {
 	args := GraphStorageServiceGetPropsArgs{
 		Req: req,
@@ -903,7 +903,7 @@ func (p *GraphStorageServiceChannelClient) GetProps(ctx context.Context, req *Ge
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) AddVertices(ctx context.Context, req *AddVerticesRequest) (_r *ExecResponse, err error) {
 	args := GraphStorageServiceAddVerticesArgs{
 		Req: req,
@@ -918,7 +918,7 @@ func (p *GraphStorageServiceChannelClient) AddVertices(ctx context.Context, req 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) AddEdges(ctx context.Context, req *AddEdgesRequest) (_r *ExecResponse, err error) {
 	args := GraphStorageServiceAddEdgesArgs{
 		Req: req,
@@ -933,7 +933,7 @@ func (p *GraphStorageServiceChannelClient) AddEdges(ctx context.Context, req *Ad
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) DeleteEdges(ctx context.Context, req *DeleteEdgesRequest) (_r *ExecResponse, err error) {
 	args := GraphStorageServiceDeleteEdgesArgs{
 		Req: req,
@@ -948,7 +948,7 @@ func (p *GraphStorageServiceChannelClient) DeleteEdges(ctx context.Context, req 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) DeleteVertices(ctx context.Context, req *DeleteVerticesRequest) (_r *ExecResponse, err error) {
 	args := GraphStorageServiceDeleteVerticesArgs{
 		Req: req,
@@ -963,7 +963,7 @@ func (p *GraphStorageServiceChannelClient) DeleteVertices(ctx context.Context, r
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) UpdateVertex(ctx context.Context, req *UpdateVertexRequest) (_r *UpdateResponse, err error) {
 	args := GraphStorageServiceUpdateVertexArgs{
 		Req: req,
@@ -978,7 +978,7 @@ func (p *GraphStorageServiceChannelClient) UpdateVertex(ctx context.Context, req
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) UpdateEdge(ctx context.Context, req *UpdateEdgeRequest) (_r *UpdateResponse, err error) {
 	args := GraphStorageServiceUpdateEdgeArgs{
 		Req: req,
@@ -993,7 +993,7 @@ func (p *GraphStorageServiceChannelClient) UpdateEdge(ctx context.Context, req *
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) ScanVertex(ctx context.Context, req *ScanVertexRequest) (_r *ScanVertexResponse, err error) {
 	args := GraphStorageServiceScanVertexArgs{
 		Req: req,
@@ -1008,7 +1008,7 @@ func (p *GraphStorageServiceChannelClient) ScanVertex(ctx context.Context, req *
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) ScanEdge(ctx context.Context, req *ScanEdgeRequest) (_r *ScanEdgeResponse, err error) {
 	args := GraphStorageServiceScanEdgeArgs{
 		Req: req,
@@ -1023,7 +1023,7 @@ func (p *GraphStorageServiceChannelClient) ScanEdge(ctx context.Context, req *Sc
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) GetUUID(ctx context.Context, req *GetUUIDReq) (_r *GetUUIDResp, err error) {
 	args := GraphStorageServiceGetUUIDArgs{
 		Req: req,
@@ -1038,7 +1038,7 @@ func (p *GraphStorageServiceChannelClient) GetUUID(ctx context.Context, req *Get
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) LookupIndex(ctx context.Context, req *LookupIndexRequest) (_r *LookupIndexResp, err error) {
 	args := GraphStorageServiceLookupIndexArgs{
 		Req: req,
@@ -1053,7 +1053,7 @@ func (p *GraphStorageServiceChannelClient) LookupIndex(ctx context.Context, req 
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) LookupAndTraverse(ctx context.Context, req *LookupAndTraverseRequest) (_r *GetNeighborsResponse, err error) {
 	args := GraphStorageServiceLookupAndTraverseArgs{
 		Req: req,
@@ -1068,7 +1068,7 @@ func (p *GraphStorageServiceChannelClient) LookupAndTraverse(ctx context.Context
 }
 
 // Parameters:
-//  - Req
+//   - Req
 func (p *GraphStorageServiceChannelClient) AddEdgesAtomic(ctx context.Context, req *AddEdgesRequest) (_r *ExecResponse, err error) {
 	args := GraphStorageServiceAddEdgesAtomicArgs{
 		Req: req,
@@ -1824,7 +1824,7 @@ func (p *graphStorageServiceProcessorAddEdgesAtomic) RunContext(ctx context.Cont
 // HELPER FUNCTIONS AND STRUCTURES
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceGetNeighborsArgs struct {
 	thrift.IRequest
 	Req *GetNeighborsRequest `thrift:"req,1" db:"req" json:"req"`
@@ -1933,7 +1933,7 @@ func (p *GraphStorageServiceGetNeighborsArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceGetNeighborsResult struct {
 	thrift.IResponse
 	Success *GetNeighborsResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -2042,7 +2042,7 @@ func (p *GraphStorageServiceGetNeighborsResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceGetPropsArgs struct {
 	thrift.IRequest
 	Req *GetPropRequest `thrift:"req,1" db:"req" json:"req"`
@@ -2151,7 +2151,7 @@ func (p *GraphStorageServiceGetPropsArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceGetPropsResult struct {
 	thrift.IResponse
 	Success *GetPropResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -2260,7 +2260,7 @@ func (p *GraphStorageServiceGetPropsResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceAddVerticesArgs struct {
 	thrift.IRequest
 	Req *AddVerticesRequest `thrift:"req,1" db:"req" json:"req"`
@@ -2369,7 +2369,7 @@ func (p *GraphStorageServiceAddVerticesArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceAddVerticesResult struct {
 	thrift.IResponse
 	Success *ExecResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -2478,7 +2478,7 @@ func (p *GraphStorageServiceAddVerticesResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceAddEdgesArgs struct {
 	thrift.IRequest
 	Req *AddEdgesRequest `thrift:"req,1" db:"req" json:"req"`
@@ -2587,7 +2587,7 @@ func (p *GraphStorageServiceAddEdgesArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceAddEdgesResult struct {
 	thrift.IResponse
 	Success *ExecResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -2696,7 +2696,7 @@ func (p *GraphStorageServiceAddEdgesResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceDeleteEdgesArgs struct {
 	thrift.IRequest
 	Req *DeleteEdgesRequest `thrift:"req,1" db:"req" json:"req"`
@@ -2805,7 +2805,7 @@ func (p *GraphStorageServiceDeleteEdgesArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceDeleteEdgesResult struct {
 	thrift.IResponse
 	Success *ExecResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -2914,7 +2914,7 @@ func (p *GraphStorageServiceDeleteEdgesResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceDeleteVerticesArgs struct {
 	thrift.IRequest
 	Req *DeleteVerticesRequest `thrift:"req,1" db:"req" json:"req"`
@@ -3023,7 +3023,7 @@ func (p *GraphStorageServiceDeleteVerticesArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceDeleteVerticesResult struct {
 	thrift.IResponse
 	Success *ExecResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -3132,7 +3132,7 @@ func (p *GraphStorageServiceDeleteVerticesResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceUpdateVertexArgs struct {
 	thrift.IRequest
 	Req *UpdateVertexRequest `thrift:"req,1" db:"req" json:"req"`
@@ -3241,7 +3241,7 @@ func (p *GraphStorageServiceUpdateVertexArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceUpdateVertexResult struct {
 	thrift.IResponse
 	Success *UpdateResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -3350,7 +3350,7 @@ func (p *GraphStorageServiceUpdateVertexResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceUpdateEdgeArgs struct {
 	thrift.IRequest
 	Req *UpdateEdgeRequest `thrift:"req,1" db:"req" json:"req"`
@@ -3459,7 +3459,7 @@ func (p *GraphStorageServiceUpdateEdgeArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceUpdateEdgeResult struct {
 	thrift.IResponse
 	Success *UpdateResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -3568,7 +3568,7 @@ func (p *GraphStorageServiceUpdateEdgeResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceScanVertexArgs struct {
 	thrift.IRequest
 	Req *ScanVertexRequest `thrift:"req,1" db:"req" json:"req"`
@@ -3677,7 +3677,7 @@ func (p *GraphStorageServiceScanVertexArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceScanVertexResult struct {
 	thrift.IResponse
 	Success *ScanVertexResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -3786,7 +3786,7 @@ func (p *GraphStorageServiceScanVertexResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceScanEdgeArgs struct {
 	thrift.IRequest
 	Req *ScanEdgeRequest `thrift:"req,1" db:"req" json:"req"`
@@ -3895,7 +3895,7 @@ func (p *GraphStorageServiceScanEdgeArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceScanEdgeResult struct {
 	thrift.IResponse
 	Success *ScanEdgeResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -4004,7 +4004,7 @@ func (p *GraphStorageServiceScanEdgeResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceGetUUIDArgs struct {
 	thrift.IRequest
 	Req *GetUUIDReq `thrift:"req,1" db:"req" json:"req"`
@@ -4113,7 +4113,7 @@ func (p *GraphStorageServiceGetUUIDArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceGetUUIDResult struct {
 	thrift.IResponse
 	Success *GetUUIDResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -4222,7 +4222,7 @@ func (p *GraphStorageServiceGetUUIDResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceLookupIndexArgs struct {
 	thrift.IRequest
 	Req *LookupIndexRequest `thrift:"req,1" db:"req" json:"req"`
@@ -4331,7 +4331,7 @@ func (p *GraphStorageServiceLookupIndexArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceLookupIndexResult struct {
 	thrift.IResponse
 	Success *LookupIndexResp `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -4440,7 +4440,7 @@ func (p *GraphStorageServiceLookupIndexResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceLookupAndTraverseArgs struct {
 	thrift.IRequest
 	Req *LookupAndTraverseRequest `thrift:"req,1" db:"req" json:"req"`
@@ -4549,7 +4549,7 @@ func (p *GraphStorageServiceLookupAndTraverseArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceLookupAndTraverseResult struct {
 	thrift.IResponse
 	Success *GetNeighborsResponse `thrift:"success,0" db:"success" json:"success,omitempty"`
@@ -4658,7 +4658,7 @@ func (p *GraphStorageServiceLookupAndTraverseResult) String() string {
 }
 
 // Attributes:
-//  - Req
+//   - Req
 type GraphStorageServiceAddEdgesAtomicArgs struct {
 	thrift.IRequest
 	Req *AddEdgesRequest `thrift:"req,1" db:"req" json:"req"`
@@ -4767,7 +4767,7 @@ func (p *GraphStorageServiceAddEdgesAtomicArgs) String() string {
 }
 
 // Attributes:
-//  - Success
+//   - Success
 type GraphStorageServiceAddEdgesAtomicResult struct {
 	thrift.IResponse
 	Success *ExecResponse `thrift:"success,0" db:"success" json:"success,omitempty"`

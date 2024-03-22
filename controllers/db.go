@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"encoding/json"
+	"os"
+	"strconv"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
@@ -47,6 +49,17 @@ func (this *DatabaseController) Connect() {
 		params Request
 	)
 	json.Unmarshal(this.Ctx.Input.RequestBody, &params)
+
+	//获取环境变量 DB_ADDRESS
+	if params.Address == "" {
+		params.Address = os.Getenv("DB_ADDRESS")
+	}
+	//获取环境变量 DB_PORT
+	if params.Port == 0 {
+		strPort := os.Getenv("DB_PORT")
+		intPort, _ := strconv.Atoi(strPort)
+		params.Port = intPort
+	}
 
 	info, err := dao.Connect(params.Address, params.Port, params.Username, params.Password)
 	if err == nil {
