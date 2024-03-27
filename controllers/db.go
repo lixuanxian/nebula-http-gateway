@@ -65,13 +65,12 @@ func (this *DatabaseController) Connect() {
 	if err == nil {
 		nsid := info.ClientID
 		res.Code = 0
-		m := make(map[string]types.Any)
-		m["nsid"] = nsid
 		res.Data = nsid
 		this.Ctx.SetCookie("Secure", "true")
 		this.Ctx.SetCookie("SameSite", "Strict")
 		this.SetSession(beego.AppConfig.String("sessionkey"), nsid)
-
+		//force session id to res.data
+		res.Data = this.CruSession.SessionID()
 		res.Message = "Login successfully"
 	} else {
 		res.Code = -1

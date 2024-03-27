@@ -16,8 +16,6 @@ import (
 	_ "github.com/vesoft-inc/nebula-http-gateway/routers"
 
 	"github.com/vesoft-inc/nebula-http-gateway/ccore/nebula/gateway/pool"
-
-	"github.com/astaxie/beego/plugins/cors"
 )
 
 func main() {
@@ -111,13 +109,13 @@ func main() {
 	}()
 
 	// InsertFilter is used to provide a filtering function
-	beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
-		AllowOrigins:     []string{"*"},
-		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
-		AllowHeaders:     []string{"Origin", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Methods", "Access-Control-Allow-Headers", "Content-Type"},
-		ExposeHeaders:    []string{"Content-Length", "Access-Control-Allow-Origin", "Access-Control-Allow-Methods", "Access-Control-Allow-Headers", "Content-Type"},
-		AllowCredentials: true,
-	}))
+	// beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
+	// 	AllowOrigins:     []string{"*"},
+	// 	AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+	// 	AllowHeaders:     []string{"Origin", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Methods", "Access-Control-Allow-Headers", "Content-Type"},
+	// 	ExposeHeaders:    []string{"Content-Length", "Access-Control-Allow-Origin", "Access-Control-Allow-Methods", "Access-Control-Allow-Headers", "Content-Type"},
+	// 	AllowCredentials: true,
+	// }))
 
 	beego.Run()
 

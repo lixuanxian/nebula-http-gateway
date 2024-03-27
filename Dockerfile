@@ -1,4 +1,4 @@
-FROM golang:1.13.15-buster as builder
+FROM golang:1-1.22-bookworm as builder
 # Set the working directory to /app
 WORKDIR /nebula-http-gateway
 # Copy the current directory contents into the container at /app
@@ -7,7 +7,7 @@ COPY . /nebula-http-gateway
 ENV GOPROXY https://goproxy.cn
 RUN go build
 
-FROM golang:1.13.15-buster
+FROM golang:1-1.22-bookworm
 
 WORKDIR /root
 COPY --from=builder ./nebula-http-gateway .
